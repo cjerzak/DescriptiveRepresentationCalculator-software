@@ -10,8 +10,9 @@ You may download via ``
 
 # Example Use
 ```
-# Compute the amount of representation we would expect given random sampling 
-# for a population with group proportions of (1/3, 2/3,1/3) in a political body of size 50
+# Compute the expected amount of representation: 
+# - for a population of group proportions  (1/3, 2/3,1/3) 
+# - in a political body of size 50
 ExpectedRep <- ExpectedRepresentation(PopShares = c(1/3, 2/3,1/3),
                                        BodyN = 50)
 print( ExpectedRep )
