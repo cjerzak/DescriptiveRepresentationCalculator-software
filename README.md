@@ -5,4 +5,25 @@ How much representation should we expected in a given political body, given the 
 
 **Characterizing Unexplained Representation:** It contains another function `ResidualRepresentation`, that calculates the degree of representation we would expect not to be explained by the average discrepancy value; this quantity is the variance of the Rose Index of Proportionality under the random sampling model.
 
+# Downloading 
+You may download via ``
+
 # Example Use
+`
+# Compute the amount of representation we would expect given random sampling 
+# for a population with group proportions of (1/3, 2/3,1/3) in a political body of size 50
+ExpectedRep <- ExpectedRepresentation(PopShares = c(1/3, 2/3,1/3),
+                                       BodyN = 50)
+print( ExpectedRep )
+
+# Compute the amount of representation left on explained under 
+# the random sampling model for the same body and population
+ResidualRep <- ResidualRepresentation(PopShares = c(1/3, 2/3,1/3),
+                                       BodyN = 50)
+print( ResidualRep )
+`
+
+# Citation
+Gerring, Jerzak and Oncel, 2022+. 
+
+
