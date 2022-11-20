@@ -6,7 +6,16 @@ How much representation should we expected in a given political body, given the 
 **Characterizing Unexplained Representation:** It contains another function `ResidualRepresentation`, that calculates the degree of representation we would expect not to be explained by the average discrepancy value; this quantity is the variance of the Rose Index of Proportionality under the random sampling model.
 
 # Downloading 
-You may download via the `devtools` package. In particular, use `devtools::install_github(repo = "cjerzak/ExpectedRepresentationCalculator/ExpectedRepresentation")`
+You may download via the `devtools` package. In particular, use 
+
+```
+devtools::install_github(repo = "cjerzak/ExpectedRepresentationCalculator/ExpectedRepresentation")
+```
+
+Then, to load the software in, use 
+```
+library(   ExpectedRepresentation  ) 
+```
 
 # Example Use
 ```
@@ -27,5 +36,8 @@ print( ResidualRep )
 
 # Citation
 Gerring, Jerzak and Oncel, 2022+. 
+
+# Getting Support 
+Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for package questions or support.
 
 
