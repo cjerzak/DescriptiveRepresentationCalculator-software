@@ -37,7 +37,7 @@ print( ResidualRep )
 # Citation
 Gerring, Jerzak and Oncel, 2022+. 
 
-# Getting Support 
-Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for package questions or support.
+# Getting Support or Feature Requests
+Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for package support or feature requests.
 
 
