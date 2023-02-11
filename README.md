@@ -21,16 +21,16 @@ library(   ExpectedRepresentation  )
 ```
 library(ExpectedRepresentation)
 # Compute the expected amount of representation: 
-# - for a population of group proportions  (1/3, 2/3,1/3) 
+# - for a population of group proportions  (1/3, 2/3, 1/3) 
 # - in a political body of size 50
-ExpectedRep <- ExpectedRepresentation(PopShares = c(1/3, 2/3,1/3),
-                                       BodyN = 50)
+ExpectedRep <- ExpectedRepresentation(PopShares = c(1/3, 2/3, 1/3),
+                                      BodyN = 50)
 print( ExpectedRep )
 
 # Compute the amount of representation left on explained under 
 # the random sampling model for the same body and population
-ResidualRep <- ResidualRepresentation(PopShares = c(1/3, 2/3,1/3),
-                                       BodyN = 50)
+ResidualRep <- ResidualRepresentation(PopShares = c(1/3, 2/3, 1/3),
+                                      BodyN = 50)
 print( ResidualRep )
 ```
 
