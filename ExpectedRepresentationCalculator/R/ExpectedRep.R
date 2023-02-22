@@ -27,7 +27,6 @@
 #' print( ExpectedRep )
 #'
 #' @export
-#' @import
 #' @md
 
 ExpectedRepresentation <- function(PopShares, BodyN, a = -1/2, b = 1){

@@ -32,7 +32,6 @@
 #' print( ResidualRep )
 #'
 #' @export
-#' @import
 #' @md
 
 ResidualRepresentation <- function(PopShares, BodyN, a = -1/2, b = 1,nMonte = 10000){
