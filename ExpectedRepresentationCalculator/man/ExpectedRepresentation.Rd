@@ -21,7 +21,7 @@ By default, \code{a=-0.5} and \code{b=1} so that the expected Rose Index of Prop
 The expected degree of representation (a scalar).
 }
 \description{
-Finds the degree of expected representation for any group in a political body under a random sampling model as described in Gerring, Jerzak and Oncel, 2023+.
+Finds the degree of expected representation for any group in a political body under a random sampling model as described in Gerring, Jerzak and Oncel (2023+).
 }
 \examples{
 
