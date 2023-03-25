@@ -36,8 +36,10 @@ ResidualRep <- ResidualRepresentation(PopShares = c(1/3, 2/3, 1/3),
 print( ResidualRep )
 ```
 
-# Getting Support or Feature Requests
+# Feature Requests & Future Development Plan
 Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for package support or feature requests.
+
+In future releases, we will allow users to compute expected and residual representation under different institutional arrangements. We will also release country-level descriptive representation data. 
 
 # References
 John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." *SocArXiv Preprint*, 2023. [`osf.io/preprints/socarxiv/9hqnp`](https://osf.io/preprints/socarxiv/9hqnp)
