@@ -39,7 +39,7 @@ print( ResidualRep )
 # Suggested Applications
 There are several ways in which this package could be helpful: 
 - *Quantifying descriptive representation:* If you want to explain what determines descriptive representation outcomes, you can use the package to compute relative representation---i.e., the level of representation relative to what we would expect based on random sampling alone. We'll add a function which quantifies this in a future release. 
-- *Control variable:* In other situations, researchers may want to use the expected degree of representation under the random sampling model in order to control for compositional factors such as body size and population composition. 
+- *Control variable:* In other situations, researchers may want to use the expected degree of representation under the random sampling model in order to control for compositional factors such as body size and population composition. This expected representation measure is a direct quantification of how those factors should, under the random sampling model, affect representation and therefore is a useful control variable. 
 
 # Feature Requests & Future Development Plan
 Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for package support or feature requests.
