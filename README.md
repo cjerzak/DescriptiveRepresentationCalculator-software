@@ -3,7 +3,9 @@ How much representation should we expected in a given political body, given the 
 
 **Characterizing Expected Representation:** This package provides one function, `ExpectedRepresentation`, that calculates the degree of representation under random sampling, where, by default, representation is calculated using the Rose Index of Proportionality. 
 
-**Characterizing Unexplained Representation:** The package contains another function, `SDRepresentation`, that calculates the degree of representation we would expect not to be explained by the average discrepancy value; this quantity is the variance of the Rose Index of Proportionality under the random sampling model.
+**Characterizing Representation Variability:** The package contains another function, `SDRepresentation`, that calculates the degree of representation we would expect not to be explained by the average discrepancy value; this quantity is the standard deviation of the Rose Index of Proportionality under the random sampling model.
+
+**Characterizing Observed Representation:** The package contains third function, `ObservedRepresentation`, that computes the Rose Index of Proportionality using observed data. Observed representation index scores can be compared against the expected value of the index under random sampling and also against the variability of observed represenation under that model. 
 
 # Downloading 
 You may download via the `devtools` package. In particular, use 
@@ -71,7 +73,7 @@ print( ExpectedRep ) # 0.89
 # than would be expected under random sampling
 
 ####################
-# variance analysis
+# variability analysis
 ####################
 SDRep <- SDRepresentation(PopShares = PopulationProportions,
                                       BodyN = bodyN)
