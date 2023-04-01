@@ -77,14 +77,13 @@ SDRep <- SDRepresentation(PopShares = PopulationProportions,
                                       BodyN = bodyN)
 ExpectedRep_CI <- c(ExpectedRep-1.96*SDRep, 
                     ExpectedRep + 1.96*SDRep)
-# print(ExpectedRep_CI) -> 0.736855 1.048397
+print(ExpectedRep_CI) # -> 0.736855 1.048397
 
 # Conclusion: 
 # Observed representation is well-within 
 # confidence intervals under the random sampling model
 # (i.e., the representation index so observed could have
 # plausibly been generated under random sampling)
-
 ```
 
 # Suggested Applications
