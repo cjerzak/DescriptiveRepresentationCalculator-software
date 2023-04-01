@@ -39,20 +39,28 @@ print( ResidualRep )
 # An Example Application 
 Now, let's do a more complex application. Let's compare the observed representation in a hypothetical supreme court with the expected representation value we would see under random sampling. 
 ```
+####################
 # Generate synthetic body with group types A and B
+####################
 MemberIdentitiesInSupremeCourt <- c("A","B","A","A","A","A","A","A","A")
 bodyN <- length( MemberIdentitiesInSupremeCourt ) 
 
+####################
 # Population proportions of A and B (e.g., from Census data)
+####################
 PopulationProportions <- c("A"=0.8,
                            "B"=0.2)
 
-# Compute observed representation index
+####################
+# Compute the observed representation index
+####################
 BodyProportions <- prop.table(table( MemberIdentitiesInSupremeCourt) )
 ObservedIndex <- 1-0.5*sum(abs(PopulationProportions-BodyProportions))
 print(ObservedIndex) # 0.91
 
+####################
 # Compute expected representation index
+####################
 ExpectedRep <- ExpectedRepresentation(PopShares = PopulationProportions,
                                       BodyN = bodyN)
                                       ExpectedRep
@@ -61,17 +69,19 @@ print( ExpectedRep ) # 0.89
 # The hypothetical body is actually somewhat *more* representative
 # than would be expected under random sampling
 
-# variance analysis 
+####################
+# variance analysis
+####################
 SDRep <- ResidualRepresentation(PopShares = PopulationProportions,
                                       BodyN = bodyN)
 ExpectedRep_CI <- c(ExpectedRep-1.96*SDRep, 
                     ExpectedRep + 1.96*SDRep)
 # print(ExpectedRep_CI) -> 0.736855 1.048397
-# Observed representation is also well-within 
+
+# Conclusion: 
+# Observed representation is well-within 
 # confidence intervals under the random sampling model
-# (i.e., the representation index
-# so observed could have plausibly been generated
-# under random sampling)
+# (i.e., the representation index so observed could have # plausibly been generated under random)
 
 ```
 
