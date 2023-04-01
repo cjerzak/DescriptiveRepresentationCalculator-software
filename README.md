@@ -1,3 +1,5 @@
+# `DescriptiveRepresentationCalculator`: An R package for quantifying observed and expected descriptive representation 
+
 # Introduction
 How much representation should we expected in a given political body, given the composition of the population and the size of that body? 
 
