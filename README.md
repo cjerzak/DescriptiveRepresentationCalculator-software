@@ -61,9 +61,17 @@ print( ExpectedRep ) # 0.89
 # The hypothetical body is actually somewhat *more* representative
 # than would be expected under random sampling
 
+# variance analysis 
 SDRep <- ResidualRepresentation(PopShares = PopulationProportions,
                                       BodyN = bodyN)
-                                      ExpectedRep
+ExpectedRep_CI <- c(ExpectedRep-1.96*SDRep, 
+                    ExpectedRep + 1.96*SDRep)
+# print(ExpectedRep_CI) -> 0.736855 1.048397
+# Observed representation is also well-within 
+# confidence intervals under the random sampling model
+# (i.e., the representation index
+# so observed could have plausibly been generated
+# under random sampling)
 
 ```
 

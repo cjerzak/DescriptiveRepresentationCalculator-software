@@ -35,10 +35,10 @@
 #' @md
 
 ResidualRepresentation <- function(PopShares, BodyN, a = -1/2, b = 1,nMonte = 10000){
-  MeanTrue <- theoretical_L1deviance_affine(PopShares = PopShares,
-                                            BodyN = BodyN,
-                                            a = a,
-                                            b = b)
+  MeanTrue <- ExpectedRepresentation(PopShares = PopShares,
+                                     BodyN = BodyN,
+                                     a = a,
+                                     b = b)
   SampleBodies <- rmultinom(n=nMonte,size = BodyN,prob = PopShares) / BodyN
   ObsDescrep <- b + a * colSums( abs(SampleBodies - PopShares ) )
   SDEst <- sqrt( mean( (ObsDescrep - MeanTrue)^2 ) )
