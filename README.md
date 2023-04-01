@@ -46,7 +46,7 @@ MemberIdentitiesInSupremeCourt <- c("A","B","A","A","A","A","A","A","A")
 bodyN <- length( MemberIdentitiesInSupremeCourt ) 
 
 ####################
-# Population proportions of A and B (e.g., from Census data)
+# Population proportions of A and B (e.g., from census data)
 ####################
 PopulationProportions <- c("A"=0.8,
                            "B"=0.2)
