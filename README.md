@@ -81,7 +81,8 @@ ExpectedRep_CI <- c(ExpectedRep-1.96*SDRep,
 # Conclusion: 
 # Observed representation is well-within 
 # confidence intervals under the random sampling model
-# (i.e., the representation index so observed could have # plausibly been generated under random)
+# (i.e., the representation index so observed could have
+# plausibly been generated under random sampling)
 
 ```
 
