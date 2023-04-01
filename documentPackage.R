@@ -1,6 +1,6 @@
-setwd("~/Documents/ExpectedRepresentationCalculator-software")
+setwd("~/Documents/DescriptiveRepresentationCalculator-software")
 
-package_path <- "~/Documents/ExpectedRepresentationCalculator-software/DescriptiveRepresentationCalculator"
+package_path <- "~/Documents/DescriptiveRepresentationCalculator-software/DescriptiveRepresentationCalculator"
 
 devtools::document(package_path)
 try(file.remove("./DescriptiveRepresentationCalculator.pdf"),T)

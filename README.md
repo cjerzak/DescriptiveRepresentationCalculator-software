@@ -9,12 +9,12 @@ How much representation should we expected in a given political body, given the 
 You may download via the `devtools` package. In particular, use 
 
 ```
-devtools::install_github(repo = "cjerzak/ExpectedRepresentationCalculator-software/ExpectedRepresentationCalculator")
+devtools::install_github(repo = "cjerzak/DescriptiveRepresentationCalculator-software/DescriptiveRepresentationCalculator")
 ```
 
 Then, to load the software in, use 
 ```
-library(   ExpectedRepresentationCalculator  ) 
+library(   DescriptiveRepresentationCalculator  ) 
 ```
 
 # Example Use
@@ -34,6 +34,37 @@ print( ExpectedRep )
 ResidualRep <- ResidualRepresentation(PopShares = c(1/3, 2/3, 1/3),
                                       BodyN = 50)
 print( ResidualRep )
+```
+
+# An Example Application 
+Now, let's do a more complex application. Let's compare the observed representation in a hypothetical supreme court with the expected representation value we would see under random sampling. 
+```
+# Generate synthetic body with group types A and B
+MemberIdentitiesInSupremeCourt <- c("A","B","A","A","A","A","A","A","A")
+bodyN <- length( MemberIdentitiesInSupremeCourt ) 
+
+# Population proportions of A and B (e.g., from Census data)
+PopulationProportions <- c("A"=0.8,
+                           "B"=0.2)
+
+# Compute observed representation index
+BodyProportions <- prop.table(table( MemberIdentitiesInSupremeCourt) )
+ObservedIndex <- 1-0.5*sum(abs(PopulationProportions-BodyProportions))
+print(ObservedIndex) # 0.91
+
+# Compute expected representation index
+ExpectedRep <- ExpectedRepresentation(PopShares = PopulationProportions,
+                                      BodyN = bodyN)
+                                      ExpectedRep
+print( ExpectedRep ) # 0.89
+
+# The hypothetical body is actually somewhat *more* representative
+# than would be expected under random sampling
+
+SDRep <- ResidualRepresentation(PopShares = PopulationProportions,
+                                      BodyN = bodyN)
+                                      ExpectedRep
+
 ```
 
 # Suggested Applications
