@@ -26,10 +26,10 @@
 #'
 #' @examples
 #'
-#' ResidualRep <- ResidualRepresentation(PopShares = c(1/3, 2/3, 1/3),
-#'                                       BodyN = 50)
+#' SDRep <- SDRepresentation(PopShares = c(1/3, 2/3, 1/3),
+#'                                 BodyN = 50)
 #'
-#' print( ResidualRep )
+#' print( SDRep )
 #'
 #' @export
 #' @md
