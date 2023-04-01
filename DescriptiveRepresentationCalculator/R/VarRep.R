@@ -5,7 +5,7 @@
 #'
 #' @usage
 #'
-#' ResidualRepresentation(PopShares, BodyN)
+#' SDRepresentation(PopShares, BodyN)
 #'
 #' @param PopShares A numeric vector containing the group-level population proportions.
 #'
@@ -34,7 +34,7 @@
 #' @export
 #' @md
 
-ResidualRepresentation <- function(PopShares, BodyN, a = -1/2, b = 1,nMonte = 10000){
+SDRepresentation <- function(PopShares, BodyN, a = -1/2, b = 1,nMonte = 10000){
   MeanTrue <- ExpectedRepresentation(PopShares = PopShares,
                                      BodyN = BodyN,
                                      a = a,

@@ -3,7 +3,7 @@ How much representation should we expected in a given political body, given the 
 
 **Characterizing Expected Representation:** This package provides one function, `ExpectedRepresentation`, that calculates the degree of representation under random sampling, where, by default, representation is calculated using the Rose Index of Proportionality. 
 
-**Characterizing Unexplained Representation:** The package contains another function, `ResidualRepresentation`, that calculates the degree of representation we would expect not to be explained by the average discrepancy value; this quantity is the variance of the Rose Index of Proportionality under the random sampling model.
+**Characterizing Unexplained Representation:** The package contains another function, `SDRepresentation`, that calculates the degree of representation we would expect not to be explained by the average discrepancy value; this quantity is the variance of the Rose Index of Proportionality under the random sampling model.
 
 # Downloading 
 You may download via the `devtools` package. In particular, use 
@@ -31,7 +31,7 @@ print( ExpectedRep )
 ##################
 # Compute the amount of representation left on explained under 
 # the random sampling model for the same body and population
-ResidualRep <- ResidualRepresentation(PopShares = c(1/3, 2/3, 1/3),
+ResidualRep <- SDRepresentation(PopShares = c(1/3, 2/3, 1/3),
                                       BodyN = 50)
 print( ResidualRep )
 ```
@@ -54,8 +54,9 @@ PopulationProportions <- c("A"=0.8,
 ####################
 # Compute the observed representation index
 ####################
-BodyProportions <- prop.table(table( MemberIdentitiesInSupremeCourt) )
-ObservedIndex <- 1-0.5*sum(abs(PopulationProportions-BodyProportions))
+ObservedIndex <- ObservedRepresentation(
+                        BodyMemberCharacteristics = MemberIdentitiesInSupremeCourt,
+                        PopShares = PopulationProportions)
 print(ObservedIndex) # 0.91
 
 ####################
@@ -72,7 +73,7 @@ print( ExpectedRep ) # 0.89
 ####################
 # variance analysis
 ####################
-SDRep <- ResidualRepresentation(PopShares = PopulationProportions,
+SDRep <- SDRepresentation(PopShares = PopulationProportions,
                                       BodyN = bodyN)
 ExpectedRep_CI <- c(ExpectedRep-1.96*SDRep, 
                     ExpectedRep + 1.96*SDRep)
