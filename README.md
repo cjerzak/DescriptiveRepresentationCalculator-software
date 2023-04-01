@@ -37,7 +37,7 @@ print( ResidualRep )
 ```
 
 # An Example Application 
-Now, let's do a more complex application. Let's compare the observed representation in a hypothetical supreme court with the expected representation value we would see under random sampling. 
+Now, let's do a more complex application. Let's compare the observed representation in a hypothetical supreme court with the expected representation index we would see under random sampling. 
 ```
 ####################
 # Generate synthetic body with group types A and B
