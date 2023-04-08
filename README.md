@@ -48,7 +48,7 @@ Now, let's do a more complex application. Let's compare the observed representat
 # Generate synthetic body with group types A and B
 ####################
 MemberIdentitiesInSupremeCourt <- c("A","B","A","A",
-          "A","A","A","A","A")
+                    "A","A","A","A","A")
 bodyN <- length( MemberIdentitiesInSupremeCourt ) 
 
 ####################
