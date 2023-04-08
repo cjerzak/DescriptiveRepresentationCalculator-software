@@ -58,16 +58,16 @@ PopulationProportions <- c("A"=0.8,
 # Compute the observed representation index
 ####################
 ObservedIndex <- ObservedRepresentation(
-                        BodyMemberCharacteristics = MemberIdentitiesInSupremeCourt,
-                        PopShares = PopulationProportions)
+  BodyMemberCharacteristics = MemberIdentitiesInSupremeCourt,
+  PopShares = PopulationProportions)
 print(ObservedIndex) # 0.91
 
 ####################
 # Compute expected representation index
 ####################
-ExpectedRep <- ExpectedRepresentation(PopShares = PopulationProportions,
-                                      BodyN = bodyN)
-                                      ExpectedRep
+ExpectedRep <- ExpectedRepresentation(
+  PopShares = PopulationProportions,
+  BodyN = bodyN)
 print( ExpectedRep ) # 0.89
 
 # The hypothetical body is actually somewhat *more* representative
@@ -76,8 +76,9 @@ print( ExpectedRep ) # 0.89
 ####################
 # variability analysis
 ####################
-SDRep <- SDRepresentation(PopShares = PopulationProportions,
-                                      BodyN = bodyN)
+SDRep <- SDRepresentation(PopShares = 
+  PopulationProportions,
+  BodyN = bodyN)
 ExpectedRep_CI <- c(ExpectedRep-1.96*SDRep, 
                     ExpectedRep + 1.96*SDRep)
 print(ExpectedRep_CI) # -> 0.736855 1.048397
