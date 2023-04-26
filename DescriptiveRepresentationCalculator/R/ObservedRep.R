@@ -34,8 +34,11 @@
 ObservedRepresentation <- function( BodyMemberCharacteristics = NULL, PopShares, BodyShares = NULL, a = -1/2, b = 1){
   if(is.null(BodyShares)){
     BodyShares <- prop.table(table( BodyMemberCharacteristics) )
+    ObservedIndex <- a*sum(abs(PopShares-BodyShares[names(PopShares)]),na.rm=T) + b
+  }
+  if(!is.null(BodyShares)){
+    ObservedIndex <- a*sum(abs(PopShares-BodyShares),na.rm=T) + b
   }
 
-  ObservedIndex <- a*sum(abs(PopShares-BodyShares[names(PopShares)]),na.rm=T) + b
   return( ObservedIndex )
 }
