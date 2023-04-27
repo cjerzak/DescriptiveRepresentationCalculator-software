@@ -39,6 +39,7 @@ ObservedRepresentation <- function( BodyMemberCharacteristics = NULL, PopShares,
   if(!is.null(BodyShares)){
     ObservedIndex <- a*sum(abs(PopShares-BodyShares),na.rm=T) + b
   }
+  if(all(is.na(f2n(BodyShares)))){ ObservedIndex <- NA }
 
   return( ObservedIndex )
 }
