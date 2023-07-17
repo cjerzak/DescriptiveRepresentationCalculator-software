@@ -1,10 +1,10 @@
 # `DescriptiveRepresentationCalculator`: An R package for quantifying observed and expected descriptive representation 
 
-How much representation should we expected in a given political body, given the composition of the population and the size of that body? 
+How much representation *should* we expect in a political body, given the composition of the population and the size of that body? 
 
-**Characterizing Expected Representation:** This package provides one function, `ExpectedRepresentation`, that calculates the degree of representation under random sampling, where, by default, representation is calculated using the Rose Index of Proportionality. 
+**Characterizing Expected Representation:** Among other things, this package provides a function, `ExpectedRepresentation`, that calculates the degree of representation under random sampling, where, by default, representation is calculated using the Rose Index of Proportionality. This quantifies the value of descriptive representation we should expect in a political body, given population and body characteristics. 
 
-**Characterizing Representation Variability:** The package contains another function, `SDRepresentation`, that calculates the degree of representation we would expect not to be explained by the average discrepancy value; this quantity is the standard deviation of the Rose Index of Proportionality under the random sampling model.
+**Characterizing Representation Variability:** The package contains another function, `SDRepresentation`, that calculates the degree of representation we would expect not to be explained by the average discrepancy value; this quantity is the standard deviation of the Rose Index of Proportionality under the random sampling model. It captures how much uncertainty we would expect over the expected representation value under the random sampling model. 
 
 **Characterizing Observed Representation:** The package contains third function, `ObservedRepresentation`, that computes the Rose Index of Proportionality using observed data. Observed representation index scores can be compared against the expected value of the index under random sampling and also against the variability of observed represenation under that model. 
 
@@ -105,3 +105,5 @@ In future releases, we will allow users to compute expected and residual represe
 
 # References
 John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." *SocArXiv Preprint*, 2023. [`osf.io/preprints/socarxiv/9hqnp`](https://osf.io/preprints/socarxiv/9hqnp)
+
+<img src="https://connorjerzak.com/wp-content/uploads/2023/02/composition.png" width="450" height="450">
