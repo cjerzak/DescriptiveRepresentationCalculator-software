@@ -1,6 +1,6 @@
 # `DescriptiveRepresentationCalculator`: An R package for quantifying observed and expected descriptive representation 
 
-How much representation *should* we expect in a political body, given the composition of the population and the size of that body? How much variability should we expect to see around mean descriptive representation? How can we quantify observed representation in a political body and compare it to the expected value? This package provides functions providing answers to these questions. 
+How much representation *should* we expect in a political body, given the composition of the population and the size of that body? How much variability should we expect to see around mean descriptive representation? How can we quantify observed representation in a political body and compare it to the expected value? This package helps provide answers to these questions. 
 
 **Characterizing Expected Representation:** Among other things, this package provides a function, `ExpectedRepresentation`, that calculates the degree of representation under random sampling, where, by default, representation is calculated using the Rose Index of Proportionality. This quantifies the value of descriptive representation we should expect in a political body, given population and body characteristics. 
 
