@@ -1,6 +1,6 @@
 # `DescriptiveRepresentationCalculator`: An R package for quantifying observed and expected descriptive representation 
 
-## Intro
+## Motivation
 How much representation *should* we expect in a political body, given the composition of the population and the size of that body? How much variability should we expect to see around mean descriptive representation? How can we quantify observed representation in a political body and compare it to the expected value? This package helps provide answers to these questions. 
 
 ## Definitions
@@ -105,12 +105,12 @@ There are several ways in which this package could be helpful in practice:
 - *Quantifying expected and observed descriptive representation:* If you want to explain what determines descriptive representation outcomes, you can use the package to compute relative representation---i.e., the level of representation relative to what we would expect based on random sampling alone. We'll add a function which quantifies this in a future release, but can be calculated using the quantities output from this package now. 
 - *Control variable creation:* In other situations, researchers may want to use the expected degree of representation under the random sampling model in order to control for compositional factors such as body size and population composition. This expected representation measure is a direct quantification of how those factors should, under the random sampling model, affect representation and therefore is a useful control variable. 
 
-# Feature Requests & Future Development Plan
+## Feature Requests & Future Development Plan
 Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for package support or feature requests.
 
 In future releases, we will allow users to compute expected and residual representation under different institutional arrangements. We will also release country-level descriptive representation data. 
 
-# References
+## References
 John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." *SocArXiv Preprint*, 2023. [`osf.io/preprints/socarxiv/9hqnp`](https://osf.io/preprints/socarxiv/9hqnp)
 
 <img src="https://connorjerzak.com/wp-content/uploads/2023/02/composition.png" width="450" height="450">
