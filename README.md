@@ -1,14 +1,21 @@
 # `DescriptiveRepresentationCalculator`: An R package for quantifying observed and expected descriptive representation 
 
+## Intro
 How much representation *should* we expect in a political body, given the composition of the population and the size of that body? How much variability should we expect to see around mean descriptive representation? How can we quantify observed representation in a political body and compare it to the expected value? This package helps provide answers to these questions. 
 
+## Definitions
+*Descriptive representation:* The degree to which the identity characteristics present in an organization or political body  align with those of the population which they serve. Descriptive representation is often contrasted against substantive representation, which concerns the degree to which the preferences of those in the body align with those of the population. Descriptive representation is thought to be connected with substantive representation in that individuals with a given set of identity characteristics may be better positioned to understand the needs of that population compared to others. Descriptive representation would be low, for example, if a political body contained few woman (since the population contains around 50% women). Representation would be high if the political body contained 50% women. 
+
+*Rose Index of Proportionality:* A quantitative measure of descriptive representation. The quantity is calculated by taking the body shares of each social group, finding the absolute difference compared with the population shares, summing, and re-scaling so that the measure is between 0 and 1, with 1 indicating perfect descriptive representation. Perfect descriptive representation implies that the population and body shares are perfectly balanced. 
+
+## Main Package Functions
 **Characterizing Expected Representation:** Among other things, this package provides a function, `ExpectedRepresentation`, that calculates the degree of representation under random sampling, where, by default, representation is calculated using the Rose Index of Proportionality. This quantifies the value of descriptive representation we should expect in a political body, given population and body characteristics. 
 
 **Characterizing Representation Variability:** The package contains another function, `SDRepresentation`, that calculates the degree of representation we would expect not to be explained by the average discrepancy value; this quantity is the standard deviation of the Rose Index of Proportionality under the random sampling model. It captures how much uncertainty we would expect over the expected representation value under the random sampling model. 
 
 **Characterizing Observed Representation:** The package contains third function, `ObservedRepresentation`, that computes the Rose Index of Proportionality using observed data. Observed representation index scores can be compared against the expected value of the index under random sampling and also against the variability of observed represenation under that model. 
 
-# Downloading 
+## Downloading 
 You may download via the `devtools` package. In particular, use 
 
 ```
@@ -20,7 +27,7 @@ Then, to load the software in, use
 library(   DescriptiveRepresentationCalculator  ) 
 ```
 
-# Example Use
+## Example Use
 ```
 ##################
 # Compute the expected amount of representation
@@ -41,7 +48,7 @@ ResidualRep <- SDRepresentation(
 print( ResidualRep )
 ```
 
-# An Example Application 
+## An Example Application 
 Now, let's do a more complex application. Let's compare the observed representation in a hypothetical supreme court with the expected representation index we would see under random sampling. 
 ```
 ####################
@@ -93,7 +100,7 @@ print(ExpectedRep_CI) # -> 0.736855 1.048397
 # plausibly been generated under random sampling)
 ```
 
-# Suggested Uses
+## Suggested Uses
 There are several ways in which this package could be helpful in practice: 
 - *Quantifying expected and observed descriptive representation:* If you want to explain what determines descriptive representation outcomes, you can use the package to compute relative representation---i.e., the level of representation relative to what we would expect based on random sampling alone. We'll add a function which quantifies this in a future release, but can be calculated using the quantities output from this package now. 
 - *Control variable creation:* In other situations, researchers may want to use the expected degree of representation under the random sampling model in order to control for compositional factors such as body size and population composition. This expected representation measure is a direct quantification of how those factors should, under the random sampling model, affect representation and therefore is a useful control variable. 
