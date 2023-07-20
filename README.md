@@ -119,6 +119,6 @@ Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for pa
 In future releases, we will allow users to compute expected and residual representation under different institutional arrangements. We will also release country-level descriptive representation data. 
 
 ## References
-John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." *SocArXiv Preprint*, 2023. [`osf.io/preprints/socarxiv/9hqnp`](https://osf.io/preprints/socarxiv/9hqnp)
+John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." Forthcoming in *American Political Science Review*, 2023. [`Preprint`](https://osf.io/preprints/socarxiv/9hqnp)
 
 <img src="https://connorjerzak.com/wp-content/uploads/2023/02/composition.png" width="450" height="450">
