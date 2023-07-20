@@ -6,7 +6,7 @@ How much representation *should* we expect in a political body, given the compos
 ## Definitions
 ### Descriptive Representation
 
-*Definition:* The degree to which the identity characteristics present in an organization or political body  align with those of the population which they serve.
+*Definition:* The degree to which the identity characteristics present in an organization or political body  align with those of the population they serve.
 
 *Details:* Descriptive representation is often contrasted against substantive representation, which concerns the degree to which the preferences of those in the body align with those of the population. Descriptive representation is thought to be connected with substantive representation in that individuals with a given set of identity characteristics may be better positioned to understand the needs of that population compared to others. Descriptive representation would be low, for example, if a political body contained few woman (since the population contains around 50% women). Representation would be high if the political body contained 50% women. 
 
