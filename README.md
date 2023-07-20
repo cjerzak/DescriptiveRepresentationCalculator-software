@@ -121,4 +121,4 @@ In future releases, we will allow users to compute expected and residual represe
 ## References
 John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." Forthcoming in *American Political Science Review*, 2023. [`Preprint`](https://osf.io/preprints/socarxiv/9hqnp)
 
-<img src="https://connorjerzak.com/wp-content/uploads/2023/02/composition.png" width="450" height="450">
+[<img src="https://connorjerzak.com/wp-content/uploads/2023/02/composition.png" width="450" height="450">](https://connorjerzak.com/the-composition-of-descriptive-representation/)
