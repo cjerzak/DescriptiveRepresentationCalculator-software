@@ -5,7 +5,7 @@
 | [**Main Package Functions**](#functions)
 | [**Installation**](#installation)
 | [**Example Use**](#example)
-| [**Example Application**](#tutorial)
+| [**Tutorial**](#tutorial)
 | [**Suggested Uses**](#uses)
 | [**References**](#references)
 
@@ -65,7 +65,7 @@ ResidualRep <- SDRepresentation(
 print( ResidualRep )
 ```
 
-## Example Application<a id="tutorial"></a>
+## Tutorial<a id="tutorial"></a>
 Now, let's do a more complex application. Let's compare the observed representation in a hypothetical supreme court with the expected representation index we would see under random sampling. 
 ```
 ####################
