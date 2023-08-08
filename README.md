@@ -128,20 +128,17 @@ Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for pa
 In future releases, we will allow users to compute expected and residual representation under different institutional arrangements. We will also release country-level descriptive representation data. 
 
 ## References<a id="references"></a>
-John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." Forthcoming in *American Political Science Review*, 2023. [`Preprint`](https://osf.io/preprints/socarxiv/9hqnp) [BibTex](javascript:void(0);) <a href="javascript:void(0);" onclick="document.getElementById('bibtex-code').style.display = document.getElementById('bibtex-code').style.display === 'none' ? 'block' : 'none'">🔽</a>
-
-<div id="bibtex-code" style="display:none;">
-    
-    ```
-    @article{synjax2023,
-          title="{SynJax: Structured Probability Distributions for JAX}",
-          author={Milo\v{s} Stanojevi\'{c} and Laurent Sartran},
-          year={2023},
-          journal={arXiv preprint arXiv:2308.03291},
-          url={https://arxiv.org/abs/2308.03291},
-    }
-    ```
-
-</div>
+John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." Forthcoming in *American Political Science Review*, 2023. [`Preprint`](https://osf.io/preprints/socarxiv/9hqnp) 
+```
+@article{GJO-CompDR,
+        title={The Composition of Descriptive Representation},
+        author={Gerring, John and Connor T. Jerzak and Erzen Öncel},
+        journal={Forthcoming in American Political Science Review},
+        year={2023},
+        volume={},
+        number={},
+        pages={}
+}
+```
 
 [<img src="https://connorjerzak.com/wp-content/uploads/2023/02/composition.png" width="450" height="450">](https://connorjerzak.com/the-composition-of-descriptive-representation/)
