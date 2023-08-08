@@ -1,5 +1,4 @@
 setwd("~/Documents/DescriptiveRepresentationCalculator-software")
-
 package_path <- "~/Documents/DescriptiveRepresentationCalculator-software/DescriptiveRepresentationCalculator"
 
 devtools::document(package_path)
