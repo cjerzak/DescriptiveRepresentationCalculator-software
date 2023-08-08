@@ -122,12 +122,26 @@ There are several ways in which this package could be helpful in practice:
 - *Quantifying expected and observed descriptive representation:* If you want to explain what determines descriptive representation outcomes, you can use the package to compute relative representation---i.e., the level of representation relative to what we would expect based on random sampling alone. We'll add a function which quantifies this in a future release, but can be calculated using the quantities output from this package now. 
 - *Control variable creation:* In other situations, researchers may want to use the expected degree of representation under the random sampling model in order to control for compositional factors such as body size and population composition. This expected representation measure is a direct quantification of how those factors should, under the random sampling model, affect representation and therefore is a useful control variable. 
 
-## Feature Requests & Future Development Plan
+## Feature Requests & Development Plan
 Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for package support or feature requests.
 
 In future releases, we will allow users to compute expected and residual representation under different institutional arrangements. We will also release country-level descriptive representation data. 
 
 ## References<a id="references"></a>
-John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." Forthcoming in *American Political Science Review*, 2023. [`Preprint`](https://osf.io/preprints/socarxiv/9hqnp)
+John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation." Forthcoming in *American Political Science Review*, 2023. [`Preprint`](https://osf.io/preprints/socarxiv/9hqnp) [BibTex](javascript:void(0);) <a href="javascript:void(0);" onclick="document.getElementById('bibtex-code').style.display = document.getElementById('bibtex-code').style.display === 'none' ? 'block' : 'none'">🔽</a>
+
+<div id="bibtex-code" style="display:none;">
+    
+    ```
+    @article{synjax2023,
+          title="{SynJax: Structured Probability Distributions for JAX}",
+          author={Milo\v{s} Stanojevi\'{c} and Laurent Sartran},
+          year={2023},
+          journal={arXiv preprint arXiv:2308.03291},
+          url={https://arxiv.org/abs/2308.03291},
+    }
+    ```
+
+</div>
 
 [<img src="https://connorjerzak.com/wp-content/uploads/2023/02/composition.png" width="450" height="450">](https://connorjerzak.com/the-composition-of-descriptive-representation/)
