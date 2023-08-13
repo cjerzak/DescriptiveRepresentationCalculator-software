@@ -149,7 +149,7 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
       </a>
     </td>
     <td>
-      <p style="font-style:italic;">Your caption here</p>
+      <p> <i>Your caption here</i></p>
     </td>
   </tr>
 </table>
