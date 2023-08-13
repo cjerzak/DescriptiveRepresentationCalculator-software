@@ -149,7 +149,7 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
       </a>
     </td>
     <td>
-      <p> <i>Your caption here</i></p>
+      <p> <i>Observed vs. expected representation globally. Political bodies in every country are less representative than expected under a simple random sampling model, but the model explains much variability in representation.</i></p>
     </td>
   </tr>
 </table>
@@ -157,4 +157,3 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
 
 [<img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1" width="450" height="400">](https://connorjerzak.com/the-composition-of-descriptive-representation/)
 
-Paper figure: _Observed vs. expected representation globally. Political bodies in every country are less representative than expected under a simple random sampling model, but the model explains much variability in representation._
