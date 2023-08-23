@@ -8,6 +8,8 @@
 | [**Tutorial**](#tutorial)
 | [**Suggested Uses**](#uses)
 | [**References**](#references)
+| [**Documentation**](https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/DescriptiveRepresentationCalculator.pdf)
+
 
 ## What is the DescriptiveRepresentationCalculator?<a id="description"></a>
 How much representation *should* we expect in a political body, given the composition of the population and the size of that body? How much variability should we expect to see around mean descriptive representation? How can we quantify observed representation in a political body and compare it to the expected value? This package helps provide answers to these questions. 
