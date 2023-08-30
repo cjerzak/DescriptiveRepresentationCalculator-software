@@ -6,7 +6,7 @@
 | [**Installation**](#installation)
 | [**Example Use**](#example)
 | [**Tutorial**](#tutorial)
-| [**Package Uses**](#uses)
+| [**Other Package Uses**](#uses)
 | [**References**](#references)
 | [**Documentation**](https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/DescriptiveRepresentationCalculator.pdf)
 
@@ -119,7 +119,7 @@ print(ExpectedRep_CI) # -> 0.736855 1.048397
 # plausibly been generated under random sampling)
 ```
 
-## Package Uses<a id="uses"></a>
+## Other Package Uses<a id="uses"></a>
 There are several ways in which this package could be helpful in practice: 
 - *Quantifying expected and observed descriptive representation:* If you want to explain what determines descriptive representation outcomes, you can use the package to compute relative representation---i.e., the level of representation relative to what we would expect based on random sampling alone. We'll add a function which quantifies this in a future release, but can be calculated using the quantities output from this package now. 
 - *Control variable creation:* In other situations, researchers may want to use the expected degree of representation under the random sampling model in order to control for compositional factors such as body size and population composition. This expected representation measure is a direct quantification of how those factors should, under the random sampling model, affect representation and therefore is a useful control variable. 
