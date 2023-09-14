@@ -125,7 +125,8 @@ There are several other ways in which this package could be helpful in practice:
 - *Control variable creation:* In other situations, researchers may want to use the expected degree of representation under the random sampling model in order to control for compositional factors such as body size and population composition. This expected representation measure is a direct quantification of how those factors should, under the random sampling model, affect representation and therefore is a useful control variable. 
 
 ## Feature Requests & Development Plan
-Don't hesitate to reach out to Connor Jerzak at `connor.jerzak@gmail.com` for package support or feature requests.
+Don't hesitate to reach out to Connor Jerzak at [`connor.jerzak@gmail.com`](mailto:connor.jerzak@gmail.com)
+for package support or feature requests.
 
 In future releases, we will allow users to compute expected and residual representation under different institutional arrangements. We will also release country-level descriptive representation data. 
 
