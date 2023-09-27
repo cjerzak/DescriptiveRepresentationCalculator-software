@@ -31,6 +31,7 @@
 #'
 #' print( SDRep )
 #'
+#' @importFrom stats rmultinom
 #' @export
 #' @md
 

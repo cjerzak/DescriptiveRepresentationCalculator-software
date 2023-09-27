@@ -23,10 +23,10 @@
 #' @examples
 #'
 #' ObsRep <- ObservedRepresentation(
-#'                         BodyMemberCharacteristics = c("A","A","C","A","C","A"),
+#'                         BodyMemberCharacteristics = c("A","A","B","C","A","C","A"),
 #'                         PopShares = c("A"=1/3,"B"=2/3, "C"=1/3))
 #'
-#' print( ObsRep ) # 0.833
+#' print( ObsRep )
 #'
 #' @export
 #' @md
