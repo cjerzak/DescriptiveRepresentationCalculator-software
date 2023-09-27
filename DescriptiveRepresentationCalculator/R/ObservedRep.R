@@ -23,7 +23,7 @@
 #' @examples
 #'
 #' ObsRep <- ObservedRepresentation(
-#'                         BodyMemberCharacteristics = c("A","A","B","C","A","C","A"),
+#'                         BodyMemberCharacteristics = c("A","A","C","A","C","A"),
 #'                         PopShares = c("A"=1/3,"B"=2/3, "C"=1/3))
 #'
 #' print( ObsRep )
@@ -34,7 +34,9 @@
 ObservedRepresentation <- function( BodyMemberCharacteristics = NULL, PopShares, BodyShares = NULL, a = -1/2, b = 1){
   if(is.null(BodyShares)){
     BodyShares <- prop.table(table( BodyMemberCharacteristics) )
-    ObservedIndex <- a*sum(abs(PopShares-BodyShares[names(PopShares)]),na.rm=T) + b
+    BodyShares <- BodyShares[names(PopShares)]
+    ObservedIndex <- a*sum(abs(PopShares - BodyShares),
+                           a.rm=T) + b
   }
   if(!is.null(BodyShares)){
     ObservedIndex <- a*sum(abs(PopShares-BodyShares),na.rm=T) + b
