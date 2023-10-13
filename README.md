@@ -7,6 +7,7 @@
 | [**Example Use**](#example)
 | [**Tutorial**](#tutorial)
 | [**Other Package Uses**](#uses)
+| [**Data**](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/BIQZNT)
 | [**References**](#references)
 | [**Documentation**](https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/DescriptiveRepresentationCalculator.pdf)
 
