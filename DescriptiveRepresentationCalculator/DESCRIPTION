@@ -2,9 +2,9 @@ Package: DescriptiveRepresentationCalculator
 Title: Descriptive Representation Calculator from 'The Composition of Descriptive Representation'
 Version: 2.0
 Author: 'John Gerring <jgerring@austin.utexas.edu> [aut], Connor Jerzak <connor.jerzak@gmail.com> [aut, cre], Erzen Oncel <erzen.oncel@ozyegin.edu.tr> [aut]'
-Description: This package contains two main functions. The first computes the expected degree of representation for a given group in a political body under a random sampling model. The second computes the residual standard deviation in using the expected value as a prediction for observed values under the model.
+Description: Calculates descriptive representation measures for comparing the composition of a political body to the population it represents. Allows users to compute the expected degree of representation for a body under a random sampling model, the expected degree of representation variability, as well as representation scores from observed political bodies. 
 Depends: R (>= 3.3.3)
-License: Creative Commons Attribution-Noncommercial-No Derivative Works 4.0, for academic use only.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Maintainer: 'Connor Jerzak' <connor.jerzak@gmail.com>
