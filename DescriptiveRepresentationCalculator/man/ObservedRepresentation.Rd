@@ -4,7 +4,7 @@
 \alias{ObservedRepresentation}
 \title{Compute the observed degree of representation for any group in a political body}
 \usage{
-ObservedRepresentation(BodyMemberCharacteristics, PopShares)
+ObservedRepresentation(BodyMemberCharacteristics, PopShares, BodyShares, a = -0.5, b = 1)
 }
 \arguments{
 \item{BodyMemberCharacteristics}{A vector specifying the characteristics for members of a political body.}
@@ -13,7 +13,7 @@ ObservedRepresentation(BodyMemberCharacteristics, PopShares)
 
 \item{BodyShares}{(optional) A numeric vector with same structure as \code{PopShares} specifying group population shares of a given body. If specified, used by default instead of \code{BodyMemberCharacteristics}.}
 
-\item{a=-0.5, b=1}{Parameters controlling the affine transformation for how the representation measure is summarized.
+\item{a, b}{Parameters controlling the affine transformation for how the representation measure is summarized.
 That is, \code{a} and \code{b} control how the L1 deviation of the population shares from the body shares
 is re-weighted. This expected L1 deviation is multiplied by \code{a}; \code{b} is as an additive re-scaling term: \code{a*L1+b}.
 By default, \code{a=-0.5} and \code{b=1} so that the Rose Index of Proportionality is returned.}

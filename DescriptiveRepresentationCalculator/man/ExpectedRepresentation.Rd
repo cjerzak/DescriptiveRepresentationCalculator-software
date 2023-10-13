@@ -4,14 +4,14 @@
 \alias{ExpectedRepresentation}
 \title{Compute the expected degree of representation for any group in a political body}
 \usage{
-ExpectedRepresentation(PopShares, BodyN)
+ExpectedRepresentation(PopShares, BodyN, a = -0.5, b = 1)
 }
 \arguments{
 \item{PopShares}{A numeric vector containing the group-level population proportions.}
 
 \item{BodyN}{A positive integer denoting the size of the political body in question.}
 
-\item{a=-0.5, b=1}{Parameters controlling the affine transformation for how the representation measure is summarized.
+\item{a, b}{The \code{a} and \code{b} parameters control the affine transformation for how the representation measure is summarized.
 That is, \code{a} and \code{b} control how the expected L1 deviation of the population shares from the body shares
 is re-weighted. The expected L1 deviation is the average value of the absolute deviation of the population from body shares under
 a random sampling model. This expected L1 deviation is multiplied by \code{a}; \code{b} is as an additive re-scaling term: \code{a*E[L1]+b}.
@@ -21,7 +21,7 @@ By default, \code{a=-0.5} and \code{b=1} so that the expected Rose Index of Prop
 The expected degree of representation (a scalar).
 }
 \description{
-Finds the degree of expected representation for any group in a political body under a random sampling model as described in Gerring, Jerzak and Oncel (2023+).
+Finds the degree of expected representation for any group in a political body under a random sampling model as described in Gerring, Jerzak and Oncel (2023).
 }
 \examples{
 

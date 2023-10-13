@@ -4,7 +4,7 @@
 #'
 #' @usage
 #'
-#' ObservedRepresentation(BodyMemberCharacteristics, PopShares)
+#' ObservedRepresentation(BodyMemberCharacteristics, PopShares, BodyShares, a = -0.5, b = 1)
 #'
 #' @param BodyMemberCharacteristics A vector specifying the characteristics for members of a political body.
 #'
@@ -12,7 +12,7 @@
 #'
 #' @param BodyShares (optional) A numeric vector with same structure as `PopShares` specifying group population shares of a given body. If specified, used by default instead of `BodyMemberCharacteristics`.
 #'
-#' @param a=-0.5,b=1 Parameters controlling the affine transformation for how the representation measure is summarized.
+#' @param a,b Parameters controlling the affine transformation for how the representation measure is summarized.
 #' That is, `a` and `b` control how the L1 deviation of the population shares from the body shares
 #' is re-weighted. This expected L1 deviation is multiplied by `a`; `b` is as an additive re-scaling term: `a*L1+b`.
 #' By default, `a=-0.5` and `b=1` so that the Rose Index of Proportionality is returned.
@@ -31,7 +31,10 @@
 #' @export
 #' @md
 
-ObservedRepresentation <- function( BodyMemberCharacteristics = NULL, PopShares, BodyShares = NULL, a = -1/2, b = 1){
+ObservedRepresentation <- function( BodyMemberCharacteristics = NULL,
+                                    PopShares,
+                                    BodyShares = NULL,
+                                    a = -0.5, b = 1){
   if(is.null(BodyShares)){
     BodyShares <- prop.table(table( BodyMemberCharacteristics) )
     BodyShares <- BodyShares[names(PopShares)]
