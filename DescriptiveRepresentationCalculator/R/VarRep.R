@@ -26,6 +26,14 @@
 #'
 #' @export
 #'
+#' @section References:
+#' \itemize{
+#' \item John Gerring, Connor T. Jerzak, Erzen Öncel. (2023),
+#' The Composition of Descriptive Representation,
+#' \emph{American Political Science Review}, p. 1-18.
+#' \url{https://doi.org/10.1017/S0003055423000680}
+#' }
+#'
 #' @examples
 #'
 #' SDRep <- SDRepresentation(PopShares = c(1/3, 2/3, 1/3),
