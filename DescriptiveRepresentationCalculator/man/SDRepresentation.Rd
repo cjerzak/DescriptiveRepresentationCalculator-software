@@ -29,6 +29,16 @@ representation under a random sampling model.
 Finds the residual standard deviation when using the expected representation for any group
 in a political body to predict observed representation as described in Gerring, Jerzak and Oncel, 2023.
 }
+\section{References}{
+
+\itemize{
+\item John Gerring, Connor T. Jerzak, Erzen Oncel. (2023),
+The Composition of Descriptive Representation,
+\emph{American Political Science Review}, p. 1-18.
+\doi{10.1017/S0003055423000680}
+}
+}
+
 \examples{
 
 SDRep <- SDRepresentation(PopShares = c(1/3, 2/3, 1/3),

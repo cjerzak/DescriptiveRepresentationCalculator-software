@@ -26,10 +26,10 @@ Finds the degree of expected representation for any group in a political body un
 \section{References}{
 
 \itemize{
-\item John Gerring, Connor T. Jerzak, Erzen Öncel. (2023),
+\item John Gerring, Connor T. Jerzak, Erzen Oncel. (2023),
 The Composition of Descriptive Representation,
 \emph{American Political Science Review}, p. 1-18.
-\url{https://doi.org/10.1017/S0003055423000680}
+\doi{10.1017/S0003055423000680}
 }
 }
 
