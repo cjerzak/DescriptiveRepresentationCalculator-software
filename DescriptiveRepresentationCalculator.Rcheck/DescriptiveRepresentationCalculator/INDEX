@@ -1,0 +1,8 @@
+ExpectedRepresentation
+                        Compute the expected degree of representation
+                        for any group in a political body
+ObservedRepresentation
+                        Compute the observed degree of representation
+                        for any group in a political body
+SDRepresentation        Compute the amount of representation left
+                        unexplained by a random sampling model.
