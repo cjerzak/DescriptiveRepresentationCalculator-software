@@ -10,7 +10,7 @@
 * checking for file ‘DescriptiveRepresentationCalculator/DESCRIPTION’ ... OK
 * this is package ‘DescriptiveRepresentationCalculator’ version ‘1.0.0’
 * package encoding: UTF-8
-* checking CRAN incoming feasibility ... [3s/12s] NOTE
+* checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Connor Jerzak <connor.jerzak@gmail.com>’
 
 New submission

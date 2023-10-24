@@ -39,7 +39,11 @@ How much representation *should* we expect in a political body, given the compos
 You may download via the `devtools` package. In particular, use 
 
 ```
-devtools::install_github(repo = "cjerzak/DescriptiveRepresentationCalculator-software/DescriptiveRepresentationCalculator")
+# install stable package version from CRAN
+install.packages("DescriptiveRepresentationCalculator")
+
+# install development version 
+#devtools::install_github(repo = "cjerzak/DescriptiveRepresentationCalculator-software/DescriptiveRepresentationCalculator")
 ```
 
 Then, to load the software in, use 
