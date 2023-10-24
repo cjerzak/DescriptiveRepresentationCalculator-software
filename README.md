@@ -8,6 +8,7 @@
 | [**Tutorial**](#tutorial)
 | [**Other Package Uses**](#uses)
 | [**Data**](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/BIQZNT)
+| [**CRAN**](https://cran.r-project.org/package=DescriptiveRepresentationCalculator)
 | [**References**](#references)
 | [**Documentation**](https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/DescriptiveRepresentationCalculator.pdf)
 
