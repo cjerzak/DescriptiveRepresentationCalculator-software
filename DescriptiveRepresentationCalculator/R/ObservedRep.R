@@ -35,16 +35,17 @@ ObservedRepresentation <- function( BodyMemberCharacteristics = NULL,
                                     PopShares,
                                     BodyShares = NULL,
                                     a = -0.5, b = 1){
+  # if BodyShares 
   if(is.null(BodyShares)){
     BodyShares <- prop.table(table( BodyMemberCharacteristics) )
     BodyShares <- BodyShares[names(PopShares)]
-    ObservedIndex <- a*sum(abs(PopShares - BodyShares),
-                           a.rm=T) + b
+    BodyShares[is.na(BodyShares)] <- 0 
   }
-  if(!is.null(BodyShares)){
-    ObservedIndex <- a*sum(abs(PopShares-BodyShares),na.rm=T) + b
-  }
-  if(all(is.na(f2n(BodyShares)))){ ObservedIndex <- NA }
+  
+  # if any body or pop shares are NA, return NA
+  if(any(is.na(BodyShares <- f2n(BodyShares)))){ return( ObservedIndex <- NA )  }
+  if(any(is.na(PopShares <- f2n(PopShares)))){ return( ObservedIndex <- NA )  }
 
-  return( ObservedIndex )
+  # compute observed representation index 
+  return( ObservedIndex <- a*sum(abs(PopShares-BodyShares),na.rm=T) + b )
 }

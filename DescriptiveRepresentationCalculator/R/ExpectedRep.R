@@ -38,6 +38,9 @@
 #' @md
 
 ExpectedRepresentation <- function(PopShares, BodyN, a = -0.5, b = 1){
+  # if any pop shares are NA, return NA
+  if(any(is.na(PopShares))){return( NA) } 
+
   if(length(PopShares) > 1){
     theoretical_means_log <- log(2) +
       (BodyN - floor(BodyN*PopShares))*log(1 - PopShares) +

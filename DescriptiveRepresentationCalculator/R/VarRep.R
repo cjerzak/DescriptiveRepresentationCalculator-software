@@ -46,11 +46,15 @@
 #' @md
 
 SDRepresentation <- function(PopShares, BodyN, a = -0.5, b = 1, nMonte = 10000){
+  # return NA if any NA 
+  if(any(is.na(PopShares))){return( NA )}
+  
+  # otherwise, compute SD 
   MeanTrue <- ExpectedRepresentation(PopShares = PopShares,
                                      BodyN = BodyN,
                                      a = a,
                                      b = b)
   SampleBodies <- rmultinom(n=nMonte,size = BodyN,prob = PopShares) / BodyN
   ObsDescrep <- b + a * colSums( abs(SampleBodies - PopShares ) )
-  SDEst <- sqrt( mean( (ObsDescrep - MeanTrue)^2 ) )
+  return( SDEst <- sqrt( mean( (ObsDescrep - MeanTrue)^2 ) ) )
 }
