@@ -1,3 +1,4 @@
+{
 # setup environment
 rm(  list = ls()  )
 setwd("~/Documents/DescriptiveRepresentationCalculator-software")
@@ -27,4 +28,4 @@ system( paste(shQuote(file.path(R.home("bin"), "R")),
               shQuote(
                 paste(package_path, "_", versionNumber, ".tar.gz", sep = "")
               )) )
-
+}

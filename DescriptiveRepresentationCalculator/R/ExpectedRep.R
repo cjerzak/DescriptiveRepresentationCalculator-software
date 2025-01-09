@@ -1,6 +1,6 @@
 #' Compute the expected degree of representation for any group in a political body
 #'
-#' Finds the degree of expected representation for any group in a political body under a random sampling model as described in Gerring, Jerzak and Oncel (2023).
+#' Finds the degree of expected representation for any group in a political body under a random sampling model as described in Gerring, Jerzak and Oncel (2024).
 #'
 #' @usage
 #'
@@ -21,9 +21,9 @@
 #'
 #' @section References:
 #' \itemize{
-#' \item John Gerring, Connor T. Jerzak, Erzen Oncel. (2023),
+#' \item John Gerring, Connor T. Jerzak, Erzen Oncel. (2024),
 #' The Composition of Descriptive Representation,
-#' \emph{American Political Science Review}, p. 1-18.
+#' \emph{American Political Science Review}, 118(2): 784-801.
 #' \doi{10.1017/S0003055423000680}
 #' }
 #'

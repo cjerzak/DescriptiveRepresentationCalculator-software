@@ -1,7 +1,7 @@
 #' Compute the amount of representation left unexplained by a random sampling model.
 #'
 #' Finds the residual standard deviation when using the expected representation for any group
-#' in a political body to predict observed representation as described in Gerring, Jerzak and Oncel, 2023.
+#' in a political body to predict observed representation as described in Gerring, Jerzak and Oncel (2024). 
 #'
 #' @usage
 #'
@@ -28,9 +28,9 @@
 #'
 #' @section References:
 #' \itemize{
-#' \item John Gerring, Connor T. Jerzak, Erzen Oncel. (2023),
+#' \item John Gerring, Connor T. Jerzak, Erzen Oncel. (2024),
 #' The Composition of Descriptive Representation,
-#' \emph{American Political Science Review}, p. 1-18.
+#' \emph{American Political Science Review}, 118(2): 784-801.
 #' \doi{10.1017/S0003055423000680}
 #' }
 #'
