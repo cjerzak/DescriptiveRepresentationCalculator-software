@@ -164,3 +164,5 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
 
 [<img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1" width="450" height="400">](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840)
 
+[<img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1" width="450" height="400">](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840)
+
