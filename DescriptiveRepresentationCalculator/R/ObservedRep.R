@@ -24,7 +24,7 @@
 #'
 #' ObsRep <- ObservedRepresentation(
 #'                         BodyMemberCharacteristics = c("A","A","C","A","C","A"),
-#'                         PopShares = c("A"=1/3,"B"=2/3, "C"=1/3))
+#'                         PopShares = c("A"=1/4,"B"=2/4, "C"=1/4))
 #'
 #' print( ObsRep )
 #'

@@ -41,3 +41,7 @@ ExpectedRep <- ExpectedRepresentation(PopShares = c(1/3, 2/3, 1/3),
 print( ExpectedRep )
 
 }
+\seealso{
+\code{\link{ObservedRepresentation}} for calculating representation scores from observed data.
+\code{\link{SDRepresentation}} for calculating representation unexplained under the random sampling model.
+}

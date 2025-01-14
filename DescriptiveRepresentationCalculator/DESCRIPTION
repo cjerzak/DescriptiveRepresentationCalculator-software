@@ -1,5 +1,5 @@
 Package: DescriptiveRepresentationCalculator
-Title: Descriptive Representation Calculator: Characterizing Observed and Expected Representation
+Title: Characterizing Observed and Expected Representation
 Version: 1.0.0
 Authors@R: c(person(given = "Connor", family = "Jerzak", 
 		    role = c("aut", "cre"),

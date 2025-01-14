@@ -36,7 +36,7 @@
 #'
 #' @examples
 #'
-#' SDRep <- SDRepresentation(PopShares = c(1/3, 2/3, 1/3),
+#' SDRep <- SDRepresentation(PopShares = c(1/4, 2/4, 1/4),
 #'                                 BodyN = 50)
 #'
 #' print( SDRep )
