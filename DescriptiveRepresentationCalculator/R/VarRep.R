@@ -40,6 +40,12 @@
 #'                                 BodyN = 50)
 #'
 #' print( SDRep )
+#' 
+#' @seealso
+#' \itemize{
+#' \item \code{\link{ObservedRepresentation}} for calculating representation scores from observed data.
+#' \item \code{\link{SDRepresentation}} for calculating representation unexplained under the random sampling model.
+#' }
 #'
 #' @importFrom stats rmultinom
 #' @export

@@ -35,13 +35,15 @@ The Composition of Descriptive Representation,
 
 \examples{
 
-ExpectedRep <- ExpectedRepresentation(PopShares = c(1/3, 2/3, 1/3),
+ExpectedRep <- ExpectedRepresentation(PopShares = c(1/4, 2/4, 1/4),
                                       BodyN = 50)
 
 print( ExpectedRep )
 
 }
 \seealso{
-\code{\link{ObservedRepresentation}} for calculating representation scores from observed data.
-\code{\link{SDRepresentation}} for calculating representation unexplained under the random sampling model.
+\itemize{
+\item \code{\link{ObservedRepresentation}} for calculating representation scores from observed data.
+\item \code{\link{SDRepresentation}} for calculating representation unexplained under the random sampling model.
+}
 }

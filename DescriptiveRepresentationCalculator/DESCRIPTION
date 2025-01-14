@@ -1,6 +1,6 @@
 Package: DescriptiveRepresentationCalculator
 Title: Characterizing Observed and Expected Representation
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: c(person(given = "Connor", family = "Jerzak", 
 		    role = c("aut", "cre"),
                     email = "connor.jerzak@gmail.com", 
@@ -17,4 +17,6 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: false
 Imports: stats
+Suggests: knitr
+VignetteBuilder: knitr
 RoxygenNote: 7.3.2

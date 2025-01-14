@@ -9,7 +9,7 @@ ObservedRepresentation(BodyMemberCharacteristics, PopShares, BodyShares, a = -0.
 \arguments{
 \item{BodyMemberCharacteristics}{A vector specifying the characteristics for members of a political body.}
 
-\item{PopShares}{A numeric vector specifying population shares of identities specified in the body-member characteristics input. The names of the entries in \code{PopShares} should correspond to identities in that body-member characteristics input  (see Example).}
+\item{PopShares}{A numeric vector specifying population shares of identities specified in the body-member characteristics input. The names of the entries in \code{PopShares} should correspond to identities in that body-member characteristics input (see Example).}
 
 \item{BodyShares}{(optional) A numeric vector with same structure as \code{PopShares} specifying group population shares of a given body. If specified, used by default instead of \code{BodyMemberCharacteristics}.}
 
@@ -28,8 +28,14 @@ Finds the degree of observed representation for any group in a political body.
 
 ObsRep <- ObservedRepresentation(
                         BodyMemberCharacteristics = c("A","A","C","A","C","A"),
-                        PopShares = c("A"=1/3,"B"=2/3, "C"=1/3))
+                        PopShares = c("A"=1/4,"B"=2/4, "C"=1/4))
 
 print( ObsRep )
 
+}
+\seealso{
+\itemize{
+\item \code{\link{ExpectedRepresentation}},
+\item \code{\link{SDRepresentation}}
+}
 }

@@ -2,8 +2,9 @@
 # setup environment
 rm(  list = ls()  )
 setwd("~/Documents/DescriptiveRepresentationCalculator-software")
-package_path <- "~/Documents/DescriptiveRepresentationCalculator-software/DescriptiveRepresentationCalculator"
-versionNumber <- "1.0.0"
+PackageName <- "DescriptiveRepresentationCalculator"
+package_path <- sprintf("~/Documents/%s-software/%s",PackageName,PackageName)
+versionNumber <- "1.1.0"
 
 
 # build documentation
@@ -15,9 +16,11 @@ devtools::document(package_path)
 system(paste(shQuote(file.path(R.home("bin"), "R")),
              "CMD", "Rd2pdf", shQuote(package_path)))
 
+setwd("~/Documents/")
+
 # build tar
 system( paste(shQuote(file.path(R.home("bin"), "R")),
-              "R CMD build", shQuote(package_path)) )
+              "R CMD build --resave-data", shQuote(package_path)) )
 
 # check package to ensure it meets CRAN standards.
 devtools::check( package_path, cran = T )
@@ -26,6 +29,6 @@ devtools::check( package_path, cran = T )
 system( paste(shQuote(file.path(R.home("bin"), "R")),
               "R CMD check --as-cran",
               shQuote(
-                paste(package_path, "_", versionNumber, ".tar.gz", sep = "")
+                paste(PackageName, "_", versionNumber, ".tar.gz", sep = "")
               )) )
 }
