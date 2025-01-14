@@ -1,0 +1,224 @@
+---
+title: "DescriptiveRepresentationCalculator Package Tutorial"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{DescriptiveRepresentationCalculator Package Tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[UTF-8]{inputenc}
+---
+
+<!--- 
+  This vignette is inspired by the paper: 
+  John Gerring, Connor T. Jerzak, Erzen Oncel. (2024),
+  *The Composition of Descriptive Representation*,
+  American Political Science Review, 118(2): 784-801.
+  https://doi.org/10.1017/S0003055423000680
+--->
+
+# Overview
+
+`DescriptiveRepresentation` is an `R` package for measuring descriptive representation in political bodies. It implements key functions from Gerring, Jerzak, and Oncel (2024), offering an accessible approach to modeling: 
+
+  - Expected representation under a random sampling model,
+  - Observed representation for a given body, and
+  - Unexplained variance in representation (i.e., representation residuals) under that random sampling model.
+
+The package therefore provides three main functions:
+
+  - `ExpectedRepresentation()`
+  - `ObservedRepresentation()`
+  - `SDRepresentation()`
+
+Each function measures a slightly different concept linked to the ideas in Gerring, Jerzak, and Oncel (2024). In this vignette, we show how to install and use these functions, illustrate a few worked examples, and discuss conceptual underpinnings relevant to descriptive representation.
+Installation
+
+To install and load the `DescriptiveRepresentationCalculator` package, run:
+
+```{r}
+# or install.packages("DescriptiveRepresentation")
+# install.packages("remotes")  # Install remotes if not already installed
+# remotes::install_github("cjerzak/DescriptiveRepresentation-software/DescriptiveRepresentation")
+library(DescriptiveRepresentationCalculator)
+```
+
+# Background
+
+How well do political bodies reflect the demographic features of the population they serve? This question is at the heart of descriptive representation, and the work of Gerring, Jerzak, and Oncel (2024) offers a systematic way to measure and analyze this phenomenon.
+
+The approach builds on the Rose Index of Proportionality that captures how far a political body's group shares deviate from the population's group shares. Concretely:
+\[
+R = 1 - \frac{1}{2} \sum_{k=1}^{K} |g_{p_k} - G_{b_k}|
+\]
+where $g_{p_k}$ is the population share of group $k$, and $G_{b_k}$ is that group's share in the body of interest $b$. The index ranges from 0 (no descriptive representation) to 1 (perfect descriptive representation).
+
+Note that there are a range of other possible weighting factors in the equation. In the package, the default parameters (`a = -0.5` and `b = 1`), producing the Rose Index. The user can modify the `a` and `b` parameters to fit other affine transformations of the underlying absolute deviations: 
+\[
+R = a + b \sum_{k=1}^{K} |g_{p_k} - G_{b_k}|
+\]
+The Rose Index has nice theoretical properties in that it is bounded between 0 (total representation mismatch) and 1 (complete match between elite and population group shares).
+
+# Random Sampling Model
+
+One of the insights of Gerring, Jerzak, and Oncel (2024) is to compare observed descriptive representation to what would be expected under a random sampling model—if individuals (or group shares) were randomly drawn into the political body.
+
+This expected value establishes a baseline: how much shortfall or surplus we might attribute purely to compositional factors (like the body’s size or the population’s group diversity).
+
+Divergences from this random baseline can reveal additional, potentially systematic, sources of under- or over-representation.
+
+# Package Workflow
+
+  - Compute expected representation for your focal political body using ExpectedRepresentation(). This gives you the theoretical baseline if seats or positions were allocated proportionally by chance given the group shares.
+  - Compute observed representation using ObservedRepresentation(). This takes actual data on who occupies each seat (or the observed group shares in the body) and compares it to population-level group shares.
+  - Examine the difference between observed and expected values or compute the standard deviation of representation scores using SDRepresentation(), to assess how much variation is left unexplained by the random sampling model.
+
+# 1. Expected Representation
+
+The function `ExpectedRepresentation()` computes the expected level of representation (the “expected Rose Index”) under a random sampling model:
+```
+ExpectedRepresentation(
+  PopShares, 
+  BodyN, 
+  a = -0.5, 
+  b = 1
+)
+```
+
+Arguments:
+
+    `PopShares`: Numeric vector of group-level population proportions (e.g., `c(0.25, 0.5, 0.25)`).
+    `BodyN`: Integer, the size of the political body in question (e.g., `50L`).
+    `a`, `b`: (Optional) Affine transformation parameters. By default, `a=−0.5`,`b=1` (for the Rose Index).
+
+Returns: A single numeric value representing the expected representation score.
+
+## Example
+
+```{r}
+# Suppose the population is split into 3 groups: 25%, 50%, 25%.
+# We have a political body (say, a legislature) of size 50.
+
+PopShares_example <- c(1/4, 2/4, 1/4)
+BodySize_example <- 50
+
+ExpectedRep <- ExpectedRepresentation(
+  PopShares = PopShares_example,
+  BodyN = BodySize_example
+)
+
+ExpectedRep
+#> Prints the expected representation under random sampling
+```
+
+In many settings, this expected value serves as the baseline to which we compare actual data. Larger bodies and more homogenous populations will tend to have higher expected representation scores under the random sampling model.
+
+# 2. Observed Representation
+
+To compare theory to reality, we compute the observed representation of any group in a political body:
+```
+ObservedRepresentation(
+  BodyMemberCharacteristics = NULL,
+  PopShares,
+  BodyShares = NULL,
+  a = -0.5,
+  b = 1
+)
+```
+
+Arguments:
+
+  - `BodyMemberCharacteristics`: A vector describing group identities for each member of the body. If supplied, the function automatically calculates the group share distribution.
+  - `PopShares`: Numeric vector of population-level group proportions (with names matching those in `BodyMemberCharacteristics`).
+  - `BodyShares`: (Optional) A numeric vector with the same structure as PopShares that directly specifies each group’s share in the body. If not NULL, overrides BodyMemberCharacteristics.
+    `a`, `b`: Affine transformation parameters, defaulting to (`−0.5`,`1`).
+
+Returns: A single numeric value for the observed representation score.
+
+## Example
+
+```{r}
+# Observed scenario: A 6-seat body with members: "A", "A", "C", "A", "C", "A"
+# The population shares are: A=1/4, B=2/4, C=1/4.
+
+ObsRep <- ObservedRepresentation(
+  BodyMemberCharacteristics = c("A","A","C","A","C","A"),
+  PopShares = c("A"=0.25, "B"=0.50, "C"=0.25)
+)
+
+ObsRep
+#> Prints the observed representation index
+```
+
+If group `"B"` had no seats here, we’d expect a larger observed discrepancy from the population’s proportions, lowering the representation score.
+
+# 3. Standard Deviation of Representation
+
+Finally, `SDRepresentation()` estimates the extent to which the observed representation can vary around its expected value under random sampling. It performs Monte Carlo simulations, drawing random compositions of the body and re-computing the representation score each time:
+
+```
+SDRepresentation(
+  PopShares, 
+  BodyN, 
+  a = -0.5, 
+  b = 1, 
+  nMonte = 10000
+)
+```
+
+Arguments:
+
+  - `PopShares`: Numeric vector of group-level population proportions.
+  - `BodyN`: Size of the political body.
+  - `a`, `b`: Affine transformation parameters.
+  - `nMonte`: Number of Monte Carlo draws used to approximate the variance.
+
+Returns: A single numeric value summarizing how much representation fluctuates (in standard deviation units) around the expected representation under a random selection model.
+
+## Example
+
+```{r}
+SDRep <- SDRepresentation(
+  PopShares = c(0.25, 0.50, 0.25),
+  BodyN = 50,
+  nMonte = 10000
+)
+
+SDRep
+#> Prints the residual standard deviation
+```
+
+In contexts with many social groups or a smaller legislative body, the variance (and thus the `SDRepresentation`) tends to be larger.
+
+# Interpretation 
+
+Expected Representation (`ExpectedRepresentation()`) helps analysts understand the baseline level of representation when selection is effectively random.
+    
+Conversely, Observed Representation (`ObservedRepresentation()`) is the real-world result, showing how close or far a body’s membership is from the population distribution.
+    
+SDRepresentation (`SDRepresentation()`) quantifies how much randomness alone could explain variation in representation, shedding light on when observed deviations might be plausibly attributed to other (non-random) factors like institutional rules or discrimination.
+
+## Use Cases
+
+  - Policy Analysis: Evaluate how well a legislature (or any political body) mirrors the underlying population demographics.
+  - Comparative Politics: Compare representation across countries or subnational regions, controlling for differences in the population’s group structure or body size.
+   - Power Analysis: Determine how much of the under-representation or over-representation could arise purely from chance due to small body sizes or population fragmentation.
+
+# Conclusion
+
+The `DescriptiveRepresentation` package operationalizes key ideas about descriptive representation from Gerring, Jerzak, and Oncel (2024). By offering easy-to-use functions for measuring expected, observed, and residual variance in representation, the package helps scholars, analysts, and policymakers investigate how factors like body size and population diversity shape the composition of political bodies worldwide.
+
+We hope this vignette gets you started! For any questions or feedback, feel free to open an issue on our [GitHub](https://github.com/cjerzak/DescriptiveRepresentationCalculator-software) repository.
+
+# References
+
+```
+@article{gerring2024composition,
+  title={The Composition of Descriptive Representation},
+  author={Gerring, John and Connor T. Jerzak and Erzen \"{O}ncel},
+  journal={American Political Science Review},
+  year={2024},
+  volume={118},
+  number={2},
+  pages={784-801}
+}
+```

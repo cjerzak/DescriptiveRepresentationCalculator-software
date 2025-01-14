@@ -1,0 +1,16 @@
+citHeader("To cite the DescriptiveRepresentationCalculator package in publications, please use the following:")
+  
+bibentry(
+  bibtype  = "Manual",
+  key     = "DescriptiveRepresentationCalculator",
+  title    = "DescriptiveRepresentationCalculator: An R Package for Characterizing Observed and Expected Representation",
+  author   = c(
+    person("Connor", "Jerzak", role = c("aut","cre"), comment = c(ORCID = "0000-0003-1914-8905"))
+  ),
+  year     = "2025",
+  version  = "1.1.0",
+  note     = "R package version 1.1.0",
+  url      = "https://doi.org/10.32614/CRAN.package.DescriptiveRepresentationCalculator"
+)
+
+citFooter("For more information, see https://github.com/cjerzak/DescriptiveRepresentationCalculator-software.")
