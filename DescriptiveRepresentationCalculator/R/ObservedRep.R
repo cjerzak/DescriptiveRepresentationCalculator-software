@@ -29,11 +29,10 @@
 #' print( ObsRep )
 #' 
 #' @seealso
-#' @seealso
 #' \itemize{
-#' \item \code{\link{ExpectedRepresentation}}, 
-#' \item \code{\link{SDRepresentation}}
-#' }
+#' \item \code{\link{ExpectedRepresentation}} for calculating expected representation scores under random sampling. 
+#' \item \code{\link{SDRepresentation}} for calculating representation unexplained under the random sampling model. 
+#' } 
 #'
 #' @export
 #' @md

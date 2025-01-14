@@ -49,7 +49,7 @@ print( SDRep )
 }
 \seealso{
 \itemize{
+\item \code{\link{ExpectedRepresentation}} for calculating expected representation scores under random sampling.
 \item \code{\link{ObservedRepresentation}} for calculating representation scores from observed data.
-\item \code{\link{SDRepresentation}} for calculating representation unexplained under the random sampling model.
 }
 }
