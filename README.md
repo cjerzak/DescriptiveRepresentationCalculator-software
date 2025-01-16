@@ -12,10 +12,10 @@
 | [**References**](#references)
 | [**Documentation**](https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/DescriptiveRepresentationCalculator.pdf)
 
+[<img src="https://img.shields.io/badge/Demo-View%20Demo-blue" alt="Demo Button">](https://cran.r-project.org/web/packages/DescriptiveRepresentationCalculator/vignettes/MainVignette.html)
+
 ## What is the DescriptiveRepresentationCalculator?<a id="description"></a>
 How much representation *should* we expect in a political body, given the composition of the population and the size of that body? How much variability should we expect to see around mean descriptive representation? How can we quantify observed representation in a political body and compare it to the expected value? This package helps provide answers to these questions based on [Gerring, Jerzak, and Öncel (2023)](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840). 
-
-[<img src="https://img.shields.io/badge/Demo-View%20Demo-blue" alt="Demo Button">](https://cran.r-project.org/web/packages/DescriptiveRepresentationCalculator/vignettes/MainVignette.html)
 
 ## Key Definitions<a id="definitions"></a>
 ### Descriptive Representation
