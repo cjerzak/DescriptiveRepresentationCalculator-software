@@ -152,7 +152,7 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
         title={The Composition of Descriptive Representation},
         author={Gerring, John and Connor T. Jerzak and Erzen Öncel},
         journal={American Political Science Review},
-        year={2023},
+        year={2024},
         volume={118},
         number={2},
         pages={784-801}
