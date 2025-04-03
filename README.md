@@ -174,23 +174,6 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
 -->
 
 
-<div style="display: flex; gap: 10px; align-items: center;">
-  <!-- First image -->
-  <img 
-    src="https://globalleadershipproject.net/wp-content/uploads/2025/04/cropped-GLPLogo.png"
-    alt="GLP Logo" 
-    style="max-width: 250px; height: auto;"
-  />
+[![GLP Logo](https://globalleadershipproject.net/wp-content/uploads/2025/04/cropped-GLPLogo.png)](https://globalleadershipproject.net)
 
-  <!-- Second image (with link) -->
-  <a 
-    href="https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840" 
-    target="_blank"
-  >
-    <img 
-      src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1"
-      alt="Representation plot" 
-      style="max-width: 250px; height: auto;"
-    />
-  </a>
-</div>
+[![Representation plot](https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1)](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840)
