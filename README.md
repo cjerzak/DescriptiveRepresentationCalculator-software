@@ -169,17 +169,14 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
     <td style="width:50%; text-align:center;">Figure: <i>Observed vs. expected representation globally. Findings: <br> [a.] Political bodies in every country are less representative than expected under a simple random sampling model. <br> [b.] But the model still explains much variability in representation.</i></td>
   </tr>
 </table>
+
+[<img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1" width="450" height="400">](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840)
 -->
 
-%[<img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1" width="450" height="400">](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840)
 
-<div style="display: flex; align-items: center; justify-content: center;">
-  <div style="margin-right: 10px;">
-    <a href="https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840">
-      <img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1" width="450" height="400" alt="Descriptive Representation Image">
-    </a>
-  </div>
-  <div>
-    <img src="https://globalleadershipproject.net/wp-content/uploads/2025/04/cropped-GLPLogo.png" alt="GLP Logo">
-  </div>
+<div style="display: flex; gap: 10px; align-items: center;">
+  <img src="https://globalleadershipproject.net/wp-content/uploads/2025/04/cropped-GLPLogo.png">
+  <a href="https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840">
+    <img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1" width="450" height="400">
+  </a>
 </div>
