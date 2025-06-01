@@ -11,7 +11,7 @@ ObservedRepresentation(BodyMemberCharacteristics, PopShares, BodyShares, a = -0.
 
 \item{PopShares}{A numeric vector specifying population shares of identities specified in the body-member characteristics input. The names of the entries in \code{PopShares} should correspond to identities in that body-member characteristics input (see Example).}
 
-\item{BodyShares}{(optional) A numeric vector with same structure as \code{PopShares} specifying group population shares of a given body. If specified, used by default instead of \code{BodyMemberCharacteristics}.}
+\item{BodyShares}{(optional) A numeric vector with same structure as \code{PopShares} specifying group population shares of a given body. If it has names they are matched to \code{PopShares}; otherwise the order is taken to correspond to \code{PopShares}.}
 
 \item{a, b}{Parameters controlling the affine transformation for how the representation measure is summarized.
 That is, \code{a} and \code{b} control how the L1 deviation of the population shares from the body shares
