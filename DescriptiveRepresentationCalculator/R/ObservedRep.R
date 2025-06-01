@@ -10,7 +10,7 @@
 #'
 #' @param PopShares A numeric vector specifying population shares of identities specified in the body-member characteristics input. The names of the entries in `PopShares` should correspond to identities in that body-member characteristics input (see Example).
 #'
-#' @param BodyShares (optional) A numeric vector with same structure as `PopShares` specifying group population shares of a given body. If specified, used by default instead of `BodyMemberCharacteristics`.
+#' @param BodyShares (optional) A numeric vector with same structure as `PopShares` specifying group population shares of a given body. If supplied with names, they are matched to `PopShares`; otherwise, the order is assumed to correspond to that of `PopShares`.
 #'
 #' @param a,b Parameters controlling the affine transformation for how the representation measure is summarized.
 #' That is, `a` and `b` control how the L1 deviation of the population shares from the body shares
@@ -41,11 +41,16 @@ ObservedRepresentation <- function( BodyMemberCharacteristics = NULL,
                                     PopShares,
                                     BodyShares = NULL,
                                     a = -0.5, b = 1){
-  # if BodyShares 
+  # if BodyShares not supplied, compute from body member characteristics
   if(is.null(BodyShares)){
     BodyShares <- prop.table(table( BodyMemberCharacteristics) )
     BodyShares <- BodyShares[names(PopShares)]
-    BodyShares[is.na(BodyShares)] <- 0 
+    BodyShares[is.na(BodyShares)] <- 0
+  } else {
+    # when provided, match by name if names are present
+    if(!is.null(names(BodyShares)) && any(names(BodyShares) != "")){
+      BodyShares <- BodyShares[names(PopShares)]
+    }
   }
   
   # if any body or pop shares are NA, return NA
