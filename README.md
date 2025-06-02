@@ -76,7 +76,7 @@ ExpectedRep <- ExpectedRepresentation(
 print( ExpectedRep )
 
 ##################
-# Compute the amount of representation left on explained under 
+# Compute the amount of representation left unexplained under
 # the random sampling model for the same body and population
 ResidualRep <- SDRepresentation(
   PopShares = c(1/3, 2/3, 1/3),
