@@ -36,3 +36,21 @@ test_that("SDRepresentation is close to theoretical value", {
                              nMonte = 10000)
   expect_equal(sd_val, 0.07904785, tolerance = 0.005)
 })
+
+# RelativeRepresentation ------------------------------------------------------
+
+test_that("RelativeRepresentation returns difference", {
+  expect_equal(
+    RelativeRepresentation(body_chars, pop_shares),
+    0.01848529,
+    tolerance = 1e-6
+  )
+})
+
+test_that("RelativeRepresentation standardized is reasonable", {
+  set.seed(123)
+  val <- RelativeRepresentation(body_chars, pop_shares,
+                                standardize = TRUE,
+                                nMonte = 10000)
+  expect_equal(val, 0.2338494, tolerance = 0.05)
+})
