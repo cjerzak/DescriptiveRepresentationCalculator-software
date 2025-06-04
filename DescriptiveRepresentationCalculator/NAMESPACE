@@ -3,4 +3,5 @@
 export(ExpectedRepresentation)
 export(ObservedRepresentation)
 export(SDRepresentation)
+export(RelativeRepresentation)
 importFrom(stats,rmultinom)
