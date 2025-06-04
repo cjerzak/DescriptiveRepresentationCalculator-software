@@ -4,26 +4,42 @@
 \alias{RelativeRepresentation}
 \title{Compute relative representation compared to random sampling}
 \usage{
-RelativeRepresentation(BodyMemberCharacteristics, PopShares,
-  a = -0.5, b = 1, standardize = FALSE, nMonte = 10000)
+RelativeRepresentation(BodyMemberCharacteristics,
+                       PopShares,
+                       a = -0.5, b = 1,
+                       standardize = FALSE,
+                       nMonte = 10000)
 }
 \arguments{
-\item{BodyMemberCharacteristics}{A vector specifying characteristics for each member of a political body.}
+\item{BodyMemberCharacteristics}{A vector specifying characteristics for each
+member of a political body.}
 
-\item{PopShares}{A numeric vector of population group proportions. Names must correspond to identities in \code{BodyMemberCharacteristics}.}
+\item{PopShares}{A numeric vector of population group proportions. Names must
+correspond to identities in \code{BodyMemberCharacteristics}.}
 
-\item{a, b}{Parameters controlling the affine transformation of the representation index.}
+\item{a, }{b Parameters controlling the affine transformation of the
+representation index, passed to \code{ObservedRepresentation} and
+\code{ExpectedRepresentation}.}
 
-\item{standardize}{Logical. If \code{TRUE}, the difference between observed and expected representation is divided by the standard deviation under random sampling.}
+\item{standardize}{Logical. If \code{TRUE}, the difference between observed and
+expected representation is divided by the standard deviation of representation
+under random sampling.}
 
-\item{nMonte}{Positive integer giving the number of Monte Carlo iterations used when \code{standardize = TRUE}.}
+\item{nMonte}{A positive integer denoting number of Monte Carlo iterations used
+for estimating the standard deviation when \code{standardize = TRUE}.}
 }
 \value{
-A scalar difference between observed and expected representation. When \code{standardize = TRUE} this difference is divided by the standard deviation under the random sampling model.
+A scalar giving the difference between observed and expected
+representation. If \code{standardize = TRUE}, the difference is divided by the
+standard deviation under the random sampling model.
 }
 \description{
-Calculates the difference between observed and expected representation. Optionally standardizes this difference using the standard deviation of representation under the random sampling model.
+Calculates the difference between observed and expected representation.
+Optionally standardizes this difference using the standard deviation of
+representation under the random sampling model.
 }
-\seealso{\code{\link{ObservedRepresentation}}, \code{\link{ExpectedRepresentation}}, \code{\link{SDRepresentation}}}
-\author{Connor T. Jerzak}
-\keyword{internal}
+\seealso{
+\code{\link{ObservedRepresentation}},
+\code{\link{ExpectedRepresentation}},
+\code{\link{SDRepresentation}}
+}
