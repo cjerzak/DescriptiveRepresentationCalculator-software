@@ -16,11 +16,11 @@
 alt="Demo
 Button">](https://cran.r-project.org/web/packages/DescriptiveRepresentationCalculator/vignettes/MainVignette.html)
 
-[<img src="https://img.shields.io/badge/CRAN-View%20on%20CRAN-green" alt="CRAN Button">](https://cran.r-project.org/package=DescriptiveRepresentationCalculator)
+[<img src="https://img.shields.io/badge/CRAN-View%20on%20CRAN-green" alt="CRAN Button">](https://cran.r-project.org/package=DescriptiveRepresentationCalculator) [<img src="https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/actions/workflows/tests.yml/badge.svg" alt="Unit tests status">](https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/actions/workflows/tests.yml)
 
 [<img src="https://img.shields.io/badge/Results-from%20Calculator%20for%20156%20countries-blue" alt="Results from the Calculator for 156 countries">](https://globalleadershipproject.net/country-rankings/)
 
-[<img src="https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/actions/workflows/tests.yml/badge.svg" alt="Unit tests status">](https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/actions/workflows/tests.yml)
+[![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-View%20Dataset-orange?style=flat-square&logo=huggingface&logoColor=white)](https://huggingface.co/datasets/cjerzak/GlobalLeadershipProject_v1)
 
 ## What is the DescriptiveRepresentationCalculator?<a id="description"></a>
 How much representation *should* we expect in a political body, given the composition of the population and the size of that body? How much variability should we expect to see around mean descriptive representation? How can we quantify observed representation in a political body and compare it to the expected value? This package helps provide answers to these questions based on [Gerring, Jerzak, and Öncel (2023)](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840). 
