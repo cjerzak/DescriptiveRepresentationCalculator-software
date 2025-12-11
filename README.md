@@ -177,6 +177,18 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
 [<img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1" width="450" height="400">](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840)
 -->
 
-[<img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1" width="400">](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840)
+<a href="https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840#gh-light-mode-only">
+  <img src="https://i0.wp.com/connorjerzak.com/wp-content/uploads/2023/07/dr.png?w=926&ssl=1#gh-light-mode-only" alt="Observed vs Expected Representation – light" width="400">
+</a>
 
-[<img src="https://globalleadershipproject.net/wp-content/uploads/2025/04/cropped-GLPLogo.png" width="400">](https://globalleadershipproject.net)
+<a href="https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840#gh-dark-mode-only">
+  <img src="https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/misc/figures/dr_dark.png?raw=true#gh-dark-mode-only" alt="Observed vs Expected Representation – dark" width="400">
+</a>
+
+<a href="https://globalleadershipproject.net#gh-light-mode-only">
+  <img src="https://globalleadershipproject.net/wp-content/uploads/2025/04/cropped-GLPLogo.png#gh-light-mode-only" alt="Global Leadership Project Logo – light" width="400">
+</a>
+
+<a href="https://globalleadershipproject.net#gh-dark-mode-only">
+  <img src="https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/misc/figures/GLPLogo_dark.png?raw=true#gh-dark-mode-only" alt="Global Leadership Project Logo – dark" width="400">
+</a>
