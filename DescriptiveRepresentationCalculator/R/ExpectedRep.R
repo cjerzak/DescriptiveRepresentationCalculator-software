@@ -45,24 +45,26 @@
 
 ExpectedRepresentation <- function(PopShares, BodyN, a = -0.5, b = 1){
   # if any pop shares are NA, return NA
-  if(any(is.na(PopShares))){return( NA) } 
+  if(any(is.na(PopShares))){return( NA) }
 
-  if(length(PopShares) > 1){
-    theoretical_means_log <- log(2) +
-      (BodyN - floor(BodyN*PopShares))*log(1 - PopShares) +
-      (floor(BodyN*PopShares)+1)*log(PopShares) +
-      log(floor(BodyN*PopShares)+1) +
-      lchoose(BodyN,floor(BodyN*PopShares)+1)
-    theoretical_means <- exp(  theoretical_means_log )
-    theoretical_mean <- sum( theoretical_means / BodyN )
-  }
-  if(length(PopShares) == 1){theoretical_mean <- 0}
+  # if one group makes up the entire population, avoid computing log(0)
   if(abs(max(PopShares) - 1) < 10^(-10)){
     theoretical_means <- 2 * (1 - PopShares)^(BodyN - floor(BodyN*PopShares)) *
-      PopShares^(floor(BodyN*PopShares)+1)*
-      (floor(BodyN*PopShares)+1)*
-      choose(BodyN,floor(BodyN*PopShares)+1)
-    theoretical_mean <- sum( theoretical_means / BodyN )
+      PopShares^(floor(BodyN*PopShares)+1) *
+      (floor(BodyN*PopShares)+1) *
+      choose(BodyN, floor(BodyN*PopShares)+1)
+    theoretical_mean <- sum(theoretical_means / BodyN)
+  } else if(length(PopShares) > 1) {
+    theoretical_means_log <- log(2) +
+      (BodyN - floor(BodyN*PopShares)) * log(1 - PopShares) +
+      (floor(BodyN*PopShares)+1) * log(PopShares) +
+      log(floor(BodyN*PopShares)+1) +
+      lchoose(BodyN, floor(BodyN*PopShares)+1)
+    theoretical_means <- exp(theoretical_means_log)
+    theoretical_mean <- sum(theoretical_means / BodyN)
+  } else {
+    theoretical_mean <- 0
   }
-  return( a * theoretical_mean + b )
+
+  return(a * theoretical_mean + b)
 }
