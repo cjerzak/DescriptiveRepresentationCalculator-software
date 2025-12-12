@@ -63,7 +63,14 @@ Then, to load the software in, use
 library(   DescriptiveRepresentationCalculator  ) 
 ```
 
-[<img src="https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/misc/figures/PackageViz.png?raw=true" width="450" height="400">](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840)
+<a href="https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840#gh-light-mode-only">
+  <img src="https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/misc/figures/PackageViz.png?raw=true#gh-light-mode-only" alt="PackageViz – light" width="450">
+</a>
+
+<a href="https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840#gh-dark-mode-only">
+  <img src="https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/misc/figures/PackageViz_dark.png?raw=true#gh-dark-mode-only" alt="PackageViz – dark" width="450">
+</a>
+
 
 ## Example Use<a id="example"></a>
 ```
