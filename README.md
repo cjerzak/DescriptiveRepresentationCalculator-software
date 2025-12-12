@@ -190,5 +190,5 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
 </a>
 
 <a href="https://globalleadershipproject.net#gh-dark-mode-only">
-  <img src="https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/misc/figures/GLPLogo_dark.png?raw=true#gh-dark-mode-only" alt="Global Leadership Project Logo – dark" width="400">
+  <img src="https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/blob/main/misc/figures/cropped-GLPLogo_dark.png?raw=true#gh-dark-mode-only" alt="Global Leadership Project Logo – dark" width="400">
 </a>
