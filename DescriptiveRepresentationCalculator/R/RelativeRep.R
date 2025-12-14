@@ -15,7 +15,7 @@
 #' member of a political body.
 #' @param PopShares A numeric vector of population group proportions. Names must
 #' correspond to identities in `BodyMemberCharacteristics`.
-#' @param a, b Parameters controlling the affine transformation of the
+#' @param a,b Parameters controlling the affine transformation of the
 #' representation index, passed to `ObservedRepresentation` and
 #' `ExpectedRepresentation`.
 #' @param standardize Logical. If `TRUE`, the difference between observed and
@@ -50,6 +50,10 @@ RelativeRepresentation <- function(BodyMemberCharacteristics,
                               BodyN = BodyN,
                               a = a, b = b,
                               nMonte = nMonte)
+    if(is.na(SDRep) || SDRep == 0){
+      warning("Standard deviation is zero or NA. Cannot standardize. Returning NA.")
+      return(NA)
+    }
     RelRep <- RelRep / SDRep
   }
   return(RelRep)

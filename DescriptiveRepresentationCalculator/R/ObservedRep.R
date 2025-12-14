@@ -41,8 +41,23 @@ ObservedRepresentation <- function( BodyMemberCharacteristics = NULL,
                                     PopShares,
                                     BodyShares = NULL,
                                     a = -0.5, b = 1){
+  # validate PopShares (non-negative, sum to 1)
+  if(!any(is.na(PopShares))){
+    validatePopShares(PopShares)
+  }
+
+  # check for empty body
+
+  if(is.null(BodyShares) && (is.null(BodyMemberCharacteristics) || length(BodyMemberCharacteristics) == 0)){
+    warning("BodyMemberCharacteristics is empty. Returning NA.")
+    return(NA)
+  }
+
   # if BodyShares not supplied, compute from body member characteristics
   if(is.null(BodyShares)){
+    # warn about unmatched body members
+    checkUnmatchedBodyMembers(BodyMemberCharacteristics, PopShares)
+
     BodyShares <- prop.table(table( BodyMemberCharacteristics) )
     BodyShares <- BodyShares[names(PopShares)]
     BodyShares[is.na(BodyShares)] <- 0

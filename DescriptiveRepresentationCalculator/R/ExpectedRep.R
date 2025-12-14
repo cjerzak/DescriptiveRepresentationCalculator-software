@@ -45,7 +45,10 @@
 
 ExpectedRepresentation <- function(PopShares, BodyN, a = -0.5, b = 1){
   # if any pop shares are NA, return NA
-  if(any(is.na(PopShares))){return( NA) } 
+  if(any(is.na(PopShares))){return( NA) }
+
+  # validate PopShares (non-negative, sum to 1)
+  validatePopShares(PopShares) 
 
   if(length(PopShares) > 1){
     theoretical_means_log <- log(2) +

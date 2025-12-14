@@ -52,8 +52,11 @@
 #' @md
 
 SDRepresentation <- function(PopShares, BodyN, a = -0.5, b = 1, nMonte = 10000){
-  # return NA if any NA 
+  # return NA if any NA
   if(any(is.na(PopShares))){return( NA )}
+
+  # validate PopShares (non-negative, sum to 1)
+  validatePopShares(PopShares)
   
   # otherwise, compute SD 
   MeanTrue <- ExpectedRepresentation(PopShares = PopShares,

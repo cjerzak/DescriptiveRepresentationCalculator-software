@@ -77,10 +77,10 @@ library(   DescriptiveRepresentationCalculator  )
 ##################
 # Compute the expected amount of representation
 # (i.e. the expected Rose Index of Proportionality:)
-# - for a population of group proportions (1/3, 2/3, 1/3) 
+# - for a population of group proportions (1/4, 2/4, 1/4)
 # - in a political body of size 50
 ExpectedRep <- ExpectedRepresentation(
-  PopShares = c(1/3, 2/3, 1/3),
+  PopShares = c(1/4, 2/4, 1/4),
   BodyN = 50)
 print( ExpectedRep )
 
@@ -88,7 +88,7 @@ print( ExpectedRep )
 # Compute the amount of representation left unexplained under
 # the random sampling model for the same body and population
 ResidualRep <- SDRepresentation(
-  PopShares = c(1/3, 2/3, 1/3),
+  PopShares = c(1/4, 2/4, 1/4),
   BodyN = 50)
 print( ResidualRep )
 ```

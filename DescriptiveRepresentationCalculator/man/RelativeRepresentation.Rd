@@ -17,7 +17,7 @@ member of a political body.}
 \item{PopShares}{A numeric vector of population group proportions. Names must
 correspond to identities in \code{BodyMemberCharacteristics}.}
 
-\item{a, }{b Parameters controlling the affine transformation of the
+\item{a, b}{Parameters controlling the affine transformation of the
 representation index, passed to \code{ObservedRepresentation} and
 \code{ExpectedRepresentation}.}
 
