@@ -4,7 +4,7 @@
   setwd("~/Documents/DescriptiveRepresentationCalculator-software")
   PackageName <- "DescriptiveRepresentationCalculator"
   package_path <- sprintf("~/Documents/%s-software/%s",PackageName,PackageName)
-  versionNumber <- "1.1.0"
+  versionNumber <- "1.1.1"
   
   # build documentation
   library(devtools); library(utils)

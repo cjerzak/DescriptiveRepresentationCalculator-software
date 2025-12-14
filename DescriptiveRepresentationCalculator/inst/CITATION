@@ -8,8 +8,8 @@ bibentry(
     person("Connor", "Jerzak", role = c("aut","cre"), comment = c(ORCID = "0000-0003-1914-8905"))
   ),
   year     = "2025",
-  version  = "1.1.0",
-  note     = "R package version 1.1.0",
+  version  = "1.1.1",
+  note     = "R package version 1.1.1",
   url      = "https://doi.org/10.32614/CRAN.package.DescriptiveRepresentationCalculator"
 )
 
