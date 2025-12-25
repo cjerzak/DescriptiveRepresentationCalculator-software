@@ -27,5 +27,5 @@
                 "R CMD check --as-cran",
                 shQuote(
                   paste(PackageName, "_", versionNumber, ".tar.gz", sep = "")
-                )) )
+                ))  )
 }
