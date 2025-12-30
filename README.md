@@ -23,7 +23,7 @@ Button">](https://cran.r-project.org/web/packages/DescriptiveRepresentationCalcu
 [![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-View%20Dataset-orange?style=flat-square&logo=huggingface&logoColor=white)](https://huggingface.co/datasets/cjerzak/GlobalLeadershipProject_v1)
 
 ## What is the DescriptiveRepresentationCalculator?<a id="description"></a>
-How much representation *should* we expect in a political body, given the composition of the population and the size of that body? How much variability should we expect to see around mean descriptive representation? How can we quantify observed representation in a political body and compare it to the expected value? This package helps provide answers to these questions based on [Gerring, Jerzak, and Öncel (2023)](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840). 
+How much representation *should* we expect in a political body, given the composition of the population and the size of that body? How much variability should we expect to see around mean descriptive representation? How can we quantify observed representation in a political body and compare it to the expected value? This package helps provide answers to these questions based on [Gerring, Jerzak, and Öncel (2024)](https://www.cambridge.org/core/journals/american-political-science-review/article/composition-of-descriptive-representation/7EAEA1CA4C553AB9D76054D1FA9C0840). 
 
 ## Key Definitions<a id="definitions"></a>
 ### Descriptive Representation
@@ -154,7 +154,7 @@ There are several other ways in which this package could be helpful in practice:
 Don't hesitate to reach out to Connor Jerzak at [`connor.jerzak@austin.utexas.edu`](mailto:connor.jerzak@austin.utexas.edu)
 for package support or feature requests.
 
-In future releases, we will allow users to compute expected and residual representation under different institutional arrangements. We will also release country-level descriptive representation data. 
+In future releases, we will allow users to compute expected and residual representation under different institutional arrangements. 
 
 ## References<a id="references"></a>
 John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Representation."  *American Political Science Review*, 118(2): 784-801, 2024. [\[PDF\]](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/7EAEA1CA4C553AB9D76054D1FA9C0840/S0003055423000680a.pdf/the-composition-of-descriptive-representation.pdf) [\[Dataverse\]](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/BIQZNT)
