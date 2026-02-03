@@ -171,7 +171,7 @@ John Gerring, Connor T. Jerzak, Erzen Öncel. "The Composition of Descriptive Re
 ```
 
 ## Related Work<a id="related"></a>
- John Gerring, Allen Hicken, Connor T. Jerzak, Robert G. Moser, and Erzen Öncel. "Where Minorities are the Majority: Electoral Rules and Ethnic Representation."  *OSF Preprint*, 2024. [\[PDF\]](https://osf.io/preprints/osf/ums8y)
+ John Gerring, Allen Hicken, Connor T. Jerzak, Robert G. Moser, and Erzen Öncel. _Electoral Rules and Descriptive Representation: A Comprehensive View Across Multiple Identities._  Under contract with Cambridge University Press, 2026. [\[PDF\]](https://osf.io/preprints/osf/ums8y)
 
 <!-- 
 <table style="width:100%;">
