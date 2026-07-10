@@ -4,7 +4,7 @@
 #'
 #' @usage
 #'
-#' ExpectedRepresentation(PopShares, BodyN, a = -0.5, b = 1)
+#' ExpectedRepresentation(PopShares, BodyN, a = -0.5, b = 1, metric = c("L1", "L2"))
 #'
 #' @param PopShares A numeric vector containing the group-level population proportions.
 #'
@@ -15,6 +15,14 @@
 #' is re-weighted. The expected L1 deviation is the average value of the absolute deviation of the population from body shares under
 #' a random sampling model. This expected L1 deviation is multiplied by `a`; `b` is as an additive re-scaling term: `a*E[L1]+b`.
 #' By default, `a=-0.5` and `b=1` so that the expected Rose Index of Proportionality is returned.
+#'
+#' @param metric A character string selecting the deviation metric underlying the representation index.
+#' `"L1"` (the default) uses the expected sum of absolute deviations between population and body shares,
+#' yielding the expected Rose Index of Proportionality under the default `a` and `b`.
+#' `"L2"` uses the expected sum of squared deviations, yielding the expected squared-deviation
+#' representation index analyzed in Gerring, Hicken, Jerzak, Moser, and Oncel (book manuscript).
+#' Under multinomial random sampling, the expected sum of squared deviations has the exact
+#' closed form `sum(PopShares*(1-PopShares))/BodyN`.
 #'
 #' @return The expected degree of representation (a scalar).
 #' @export
@@ -36,19 +44,27 @@
 #' 
 #' @seealso
 #' \itemize{
-#' \item \code{\link{ObservedRepresentation}} for calculating representation scores from observed data. 
-#' \item \code{\link{SDRepresentation}} for calculating representation unexplained under the random sampling model. 
+#' \item \code{\link{ObservedRepresentation}} for calculating representation scores from observed data.
+#' \item \code{\link{SDRepresentation}} for calculating representation unexplained under the random sampling model.
+#' \item \code{\link{ExpectedDistrictRepresentation}} for expected representation in district-based electoral systems.
 #' }
-#' 
+#'
 #' @export
 #' @md
 
-ExpectedRepresentation <- function(PopShares, BodyN, a = -0.5, b = 1){
+ExpectedRepresentation <- function(PopShares, BodyN, a = -0.5, b = 1, metric = c("L1", "L2")){
+  metric <- match.arg(metric)
+
   # if any pop shares are NA, return NA
   if(any(is.na(PopShares))){return( NA) }
 
   # validate PopShares (non-negative, sum to 1)
-  validatePopShares(PopShares) 
+  validatePopShares(PopShares)
+
+  if(metric == "L2"){
+    # under multinomial sampling, E[(BodyShare_k - PopShare_k)^2] = PopShare_k*(1-PopShare_k)/BodyN
+    return( a * sum(PopShares * (1 - PopShares)) / BodyN + b )
+  }
 
   if(length(PopShares) > 1){
     theoretical_means_log <- log(2) +

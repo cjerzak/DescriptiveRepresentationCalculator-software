@@ -5,7 +5,8 @@
 #'
 #' @usage
 #'
-#' SDRepresentation(PopShares, BodyN, a = -0.5, b = 1, nMonte = 10000)
+#' SDRepresentation(PopShares, BodyN, a = -0.5, b = 1, nMonte = 10000,
+#'                  metric = c("L1", "L2"))
 #'
 #' @param PopShares A numeric vector containing the group-level population proportions.
 #'
@@ -18,6 +19,12 @@
 #' By default, `a=-0.5` and `b=1` so that the expected Rose Index of Proportionality is used in the calculation.
 #'
 #' @param nMonte A positive integer denoting number of Monte Carlo iterations used to approximate the variance of representation under a random sampling model.
+#'
+#' @param metric A character string selecting the deviation metric underlying the representation index.
+#' `"L1"` (the default) uses the sum of absolute deviations between population and body shares,
+#' yielding the Rose Index of Proportionality under the default `a` and `b`.
+#' `"L2"` uses the sum of squared deviations, yielding the squared-deviation representation
+#' index analyzed in Gerring, Hicken, Jerzak, Moser, and Oncel (book manuscript).
 #'
 #' @return A scalar summary of the amount of representation not explained by a random sampling model.
 #' More precisely, this function returns the
@@ -51,19 +58,23 @@
 #' @export
 #' @md
 
-SDRepresentation <- function(PopShares, BodyN, a = -0.5, b = 1, nMonte = 10000){
+SDRepresentation <- function(PopShares, BodyN, a = -0.5, b = 1, nMonte = 10000,
+                             metric = c("L1", "L2")){
+  metric <- match.arg(metric)
+
   # return NA if any NA
   if(any(is.na(PopShares))){return( NA )}
 
   # validate PopShares (non-negative, sum to 1)
   validatePopShares(PopShares)
-  
-  # otherwise, compute SD 
+
+  # otherwise, compute SD
   MeanTrue <- ExpectedRepresentation(PopShares = PopShares,
                                      BodyN = BodyN,
                                      a = a,
-                                     b = b)
+                                     b = b,
+                                     metric = metric)
   SampleBodies <- rmultinom(n=nMonte,size = BodyN,prob = PopShares) / BodyN
-  ObsDescrep <- b + a * colSums( abs(SampleBodies - PopShares ) )
+  ObsDescrep <- b + a * colSums( shareDeviations(PopShares, SampleBodies, metric) )
   return( SDEst <- sqrt( mean( (ObsDescrep - MeanTrue)^2 ) ) )
 }

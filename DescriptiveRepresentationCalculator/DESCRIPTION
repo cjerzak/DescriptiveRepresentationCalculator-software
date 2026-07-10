@@ -1,6 +1,6 @@
 Package: DescriptiveRepresentationCalculator
 Title: Characterizing Observed and Expected Representation
-Version: 1.1.1
+Version: 1.2.0
 Authors@R: c(person(given = "Connor", family = "Jerzak", 
 		    role = c("aut", "cre"),
                     email = "connor.jerzak@gmail.com", 
@@ -9,7 +9,7 @@ Authors@R: c(person(given = "Connor", family = "Jerzak",
 	           comment = c(ORCID = "0000-0001-9858-2050")),
              person(given = "Erzen", family = "Oncel", role = "aut", 
 		    comment = c(ORCID = "0000-0001-9372-1090")) )
-Description: A system for analyzing descriptive representation, especially for comparing the composition of a political body to the population it represents. Users can compute the expected degree of representation for a body under a random sampling model, the expected degree of representation variability, as well as representation scores from observed political bodies. The package is based on Gerring, Jerzak, and Oncel (2024) <doi:10.1017/S0003055423000680>.
+Description: A system for analyzing descriptive representation, especially for comparing the composition of a political body to the population it represents. Users can compute the expected degree of representation for a body under a random sampling model, the expected degree of representation variability, as well as representation scores from observed political bodies. The package also provides district-level benchmarks for expected representation in single-member district systems, where district compositions follow a Dirichlet distribution and seats are filled by random sampling or largest-group-wins affinity voting, as well as group-level representation diagnostics and comparisons between bodies. The package is based on Gerring, Jerzak, and Oncel (2024) <doi:10.1017/S0003055423000680>.
 URL: https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/
 BugReports: https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/issues
 Depends: R (>= 3.3.3)
@@ -20,4 +20,4 @@ Imports: stats
 Suggests: knitr,
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
-RoxygenNote: 7.3.3
+Config/roxygen2/version: 8.0.0

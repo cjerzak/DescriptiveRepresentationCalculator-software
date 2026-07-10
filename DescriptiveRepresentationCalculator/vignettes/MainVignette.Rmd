@@ -24,14 +24,17 @@ vignette: >
   - Observed representation for a given body, and
   - Unexplained variance in representation (i.e., representation residuals) under that random sampling model.
 
-The package therefore provides four main functions:
+The package therefore provides seven main functions:
 
   - `ExpectedRepresentation()`
   - `ObservedRepresentation()`
   - `SDRepresentation()`
   - `RelativeRepresentation()`
+  - `ExpectedDistrictRepresentation()`
+  - `GroupRepresentation()`
+  - `CompareRepresentation()`
 
-Each function measures a slightly different concept linked to the ideas in Gerring, Jerzak, and Oncel (2024). In this vignette, we show how to install and use these functions, illustrate a few worked examples, and discuss conceptual underpinnings relevant to descriptive representation.
+Each function measures a slightly different concept linked to the ideas in Gerring, Jerzak, and Oncel (2024) and in the companion book manuscript, Gerring, Hicken, Jerzak, Moser, and Oncel, *Electoral Rules and Descriptive Representation: A Comprehensive View Across Multiple Identities*. In this vignette, we show how to install and use these functions, illustrate a few worked examples, and discuss conceptual underpinnings relevant to descriptive representation.
 Installation
 
 To install and load the `DescriptiveRepresentationCalculator` package, run:
@@ -58,6 +61,12 @@ Note that there are a range of other possible weighting factors in the equation.
 R = b + a \sum_{k=1}^{K} |g_{p_k} - G_{b_k}|
 \]
 The Rose Index has nice theoretical properties in that it is bounded between 0 (total representation mismatch) and 1 (complete match between elite and population group shares).
+
+In addition to the L1 (absolute-deviation) form above, the index-computing functions accept a `metric` argument. Setting `metric = "L2"` replaces absolute deviations with squared deviations:
+\[
+\tilde{R} = 1 - \frac{1}{2} \sum_{k=1}^{K} \left(g_{p_k} - G_{b_k}\right)^2
+\]
+This squared-deviation index, analyzed in Gerring, Hicken, Jerzak, Moser, and Oncel (book manuscript), is analytically tractable (its expectation under random sampling has an exact closed form) and always upper-bounds the Rose Index. The default `metric = "L1"` reproduces the classic Rose Index behavior.
 
 # Random Sampling Model
 
@@ -245,7 +254,85 @@ RelRep_std
 
 A positive value indicates the body is more representative than expected under random sampling; a negative value indicates less representation than expected. When standardized, values beyond ±2 suggest the observed representation is unlikely under the random sampling model alone.
 
-# Interpretation 
+# 5. District-Level Benchmarks
+
+The functions above treat the political body as a single pool filled by random sampling. `ExpectedDistrictRepresentation()` extends the framework to bodies elected from single-member districts, following the derivations in Gerring, Hicken, Jerzak, Moser, and Oncel (book manuscript). In this model, each district's group composition is drawn from a Dirichlet distribution whose mean is `PopShares` and whose `concentration` parameter governs geographic segregation: small values produce highly segregated districts, large values produce districts that each resemble the national population.
+
+```
+ExpectedDistrictRepresentation(
+  PopShares,
+  concentration,
+  nDistricts,
+  selectionRule = c("random", "affinity"),
+  a = -0.5,
+  b = 1,
+  nMonte = 10000
+)
+```
+
+Arguments:
+
+  - `PopShares`: Numeric vector of group-level population proportions (mean district shares).
+  - `concentration`: Positive number; the Dirichlet concentration parameter controlling spatial concentration of groups across districts.
+  - `nDistricts`: Number of single-member districts, or `Inf` for the large-district limit.
+  - `selectionRule`: `"random"` (each district seat won by a group with probability equal to its district share) or `"affinity"` (the largest group in each district always captures the seat).
+  - `a`, `b`: Affine transformation parameters.
+  - `nMonte`: Monte Carlo draws used only for `"affinity"` with more than two groups.
+
+Returns: A single numeric value — the expected squared-deviation representation index (the `metric = "L2"` index) for the district-elected body.
+
+## Example
+
+```{r}
+# Random-sampling seat allocation across 100 districts:
+ExpectedDistrictRepresentation(
+  PopShares = c(0.3, 0.7),
+  concentration = 4,
+  nDistricts = 100
+)
+#> Approaches 1 as nDistricts grows (Proposition 2 of the book manuscript)
+
+# Largest-group-wins affinity voting, large-district limit:
+ExpectedDistrictRepresentation(
+  PopShares = c(0.3, 0.7),
+  concentration = 4,
+  nDistricts = Inf,
+  selectionRule = "affinity"
+)
+#> Need not approach 1: the gap reflects the mismatch between each group's
+#> population share and its probability of being the largest group in a district
+```
+
+Under random sampling, representation converges to the proportional benchmark as the number of districts grows. Under affinity voting, it converges instead to a limit governed by the mismatch between each group's mean population share and its probability of forming a local plurality — which is how geographically concentrated groups can secure representation under single-member district rules while dispersed groups (such as women) are disadvantaged.
+
+# 6. Group-Level Diagnostics
+
+`GroupRepresentation()` unpacks the scalar representation index into per-group diagnostics:
+
+```{r}
+GroupRepresentation(
+  BodyMemberCharacteristics = c("A", "A", "C", "A", "C", "A"),
+  PopShares = c("A" = 0.25, "B" = 0.50, "C" = 0.25)
+)
+#> Returns a data.frame with PopShare, BodyShare, Shortfall, and ShortfallRatio
+```
+
+`Shortfall` (population share minus body share) accentuates the under-representation of large groups; `ShortfallRatio` (the shortfall as a fraction of the group's population share) accentuates the under-representation of small groups.
+
+# 7. Comparing Two Bodies
+
+`CompareRepresentation()` computes the difference in observed representation between two bodies measured against the same population — for example, the multi-member (MMD) and single-member (SMD) district tiers of a mixed electoral system:
+
+```{r}
+CompareRepresentation(
+  BodyMemberCharacteristics1 = c("A", "B", "A", "B", "A", "A"),  # e.g., MMD tier
+  BodyMemberCharacteristics2 = c("A", "A", "A", "A", "A", "B"),  # e.g., SMD tier
+  PopShares = c("A" = 0.55, "B" = 0.45)
+)
+#> Positive values: the first body better mirrors the population
+```
+
+# Interpretation
 
 Expected Representation (`ExpectedRepresentation()`) helps analysts understand the baseline level of representation when selection is effectively random.
 
@@ -254,6 +341,10 @@ Conversely, Observed Representation (`ObservedRepresentation()`) is the real-wor
 SDRepresentation (`SDRepresentation()`) quantifies how much randomness alone could explain variation in representation, shedding light on when observed deviations might be plausibly attributed to other (non-random) factors like institutional rules or discrimination.
 
 Relative Representation (`RelativeRepresentation()`) directly compares observed to expected representation, providing a single measure of deviation from the random sampling baseline. When standardized, it expresses this deviation in terms of standard deviations, enabling cross-body or cross-country comparisons on a common scale.
+
+Expected District Representation (`ExpectedDistrictRepresentation()`) provides theoretical benchmarks for district-based electoral systems, quantifying how group size, geographic concentration, and the seat-allocation rule (random sampling versus affinity voting) shape expected representation.
+
+Group Representation (`GroupRepresentation()`) and Compare Representation (`CompareRepresentation()`) support finer-grained analyses: the former identifies which specific groups drive a body's representational shortfall, and the latter quantifies which of two bodies (or electoral tiers) better mirrors the population.
 
 ## Use Cases
 
@@ -278,5 +369,13 @@ We hope this vignette gets you started! For any questions or feedback, feel free
   volume={118},
   number={2},
   pages={784-801}
+}
+
+@book{gerring2026electoral,
+  title={Electoral Rules and Descriptive Representation:
+         A Comprehensive View Across Multiple Identities},
+  author={Gerring, John and Allen Hicken and Connor T. Jerzak
+          and Robert G. Moser and Erzen \"{O}ncel},
+  note={Book manuscript}
 }
 ```

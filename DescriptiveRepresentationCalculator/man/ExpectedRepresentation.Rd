@@ -4,7 +4,7 @@
 \alias{ExpectedRepresentation}
 \title{Compute the expected degree of representation for any group in a political body}
 \usage{
-ExpectedRepresentation(PopShares, BodyN, a = -0.5, b = 1)
+ExpectedRepresentation(PopShares, BodyN, a = -0.5, b = 1, metric = c("L1", "L2"))
 }
 \arguments{
 \item{PopShares}{A numeric vector containing the group-level population proportions.}
@@ -16,6 +16,14 @@ That is, \code{a} and \code{b} control how the expected L1 deviation of the popu
 is re-weighted. The expected L1 deviation is the average value of the absolute deviation of the population from body shares under
 a random sampling model. This expected L1 deviation is multiplied by \code{a}; \code{b} is as an additive re-scaling term: \code{a*E[L1]+b}.
 By default, \code{a=-0.5} and \code{b=1} so that the expected Rose Index of Proportionality is returned.}
+
+\item{metric}{A character string selecting the deviation metric underlying the representation index.
+\code{"L1"} (the default) uses the expected sum of absolute deviations between population and body shares,
+yielding the expected Rose Index of Proportionality under the default \code{a} and \code{b}.
+\code{"L2"} uses the expected sum of squared deviations, yielding the expected squared-deviation
+representation index analyzed in Gerring, Hicken, Jerzak, Moser, and Oncel (book manuscript).
+Under multinomial random sampling, the expected sum of squared deviations has the exact
+closed form \code{sum(PopShares*(1-PopShares))/BodyN}.}
 }
 \value{
 The expected degree of representation (a scalar).
@@ -45,5 +53,6 @@ print( ExpectedRep )
 \itemize{
 \item \code{\link{ObservedRepresentation}} for calculating representation scores from observed data.
 \item \code{\link{SDRepresentation}} for calculating representation unexplained under the random sampling model.
+\item \code{\link{ExpectedDistrictRepresentation}} for expected representation in district-based electoral systems.
 }
 }

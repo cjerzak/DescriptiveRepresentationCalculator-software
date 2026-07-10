@@ -47,6 +47,14 @@ How much representation *should* we expect in a political body, given the compos
 
 **Characterizing Observed Representation:** The package contains third function, `ObservedRepresentation`, that computes the Rose Index of Proportionality using observed data. Observed representation index scores can be compared against the expected value of the index under random sampling and also against the variability of observed represenation under that model. 
 
+**District-Level Electoral-System Benchmarks:** `ExpectedDistrictRepresentation` computes the expected (squared-deviation) representation index for a body elected from single-member districts whose group compositions follow a Dirichlet distribution, under either random sampling or largest-group-wins affinity voting. It quantifies how group size and geographic concentration shape expected representation under different electoral rules, following Gerring, Hicken, Jerzak, Moser, and Öncel (*Electoral Rules and Descriptive Representation*, book manuscript). Set `nDistricts = Inf` for large-district limits.
+
+**Group-Level Diagnostics:** `GroupRepresentation` unpacks the scalar representation index into per-group diagnostics: each group's population share, body share, shortfall (population share minus body share), and shortfall as a fraction of the group's population size.
+
+**Comparing Bodies or Electoral Tiers:** `CompareRepresentation` computes the difference in observed representation between two bodies measured against the same population shares — for example, the multi-member and single-member district tiers of a mixed electoral system.
+
+*Note:* The index-computing functions accept a `metric` argument: the default `"L1"` yields the Rose Index of Proportionality, while `"L2"` yields an analytically tractable squared-deviation representation index.
+
 ## Installation<a id="installation"></a>
 You may download via the `devtools` package. In particular, use 
 

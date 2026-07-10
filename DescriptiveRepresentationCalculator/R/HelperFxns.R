@@ -19,6 +19,50 @@ validatePopShares <- function(PopShares, tol = 1e-6) {
   invisible(TRUE)
 }
 
+#' Derive body shares aligned with population shares
+#'
+#' Computes group shares of a body from raw member characteristics when
+#' `BodyShares` is not supplied, or aligns a supplied `BodyShares` vector
+#' with `PopShares` by name.
+#'
+#' @param BodyMemberCharacteristics A vector of body member characteristics.
+#' @param PopShares A named numeric vector of population shares.
+#' @param BodyShares (optional) A numeric vector of pre-computed body shares.
+#' @return A numeric vector of body shares aligned with `PopShares`.
+#' @keywords internal
+deriveBodyShares <- function(BodyMemberCharacteristics, PopShares, BodyShares = NULL) {
+  if(is.null(BodyShares)){
+    # warn about unmatched body members
+    checkUnmatchedBodyMembers(BodyMemberCharacteristics, PopShares)
+
+    BodyShares <- prop.table(table( BodyMemberCharacteristics) )
+    BodyShares <- BodyShares[names(PopShares)]
+    BodyShares[is.na(BodyShares)] <- 0
+  } else {
+    # when provided, match by name if names are present
+    if(!is.null(names(BodyShares)) && any(names(BodyShares) != "")){
+      BodyShares <- BodyShares[names(PopShares)]
+    }
+  }
+  BodyShares
+}
+
+#' Compute the deviation between population and body shares
+#'
+#' Returns per-group absolute (`"L1"`) or squared (`"L2"`) deviations between
+#' population and body shares.
+#'
+#' @param PopShares A numeric vector of population shares.
+#' @param BodyShares A numeric vector of body shares.
+#' @param metric Either `"L1"` (absolute deviations) or `"L2"` (squared deviations).
+#' @return A numeric vector of per-group deviations.
+#' @keywords internal
+shareDeviations <- function(PopShares, BodyShares, metric) {
+  switch(metric,
+         "L1" = abs(PopShares - BodyShares),
+         "L2" = (PopShares - BodyShares)^2)
+}
+
 #' Check for body members not in population shares
 #'
 #' Warns if body member characteristics include groups not present in PopShares.

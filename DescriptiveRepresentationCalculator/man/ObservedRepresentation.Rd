@@ -4,7 +4,8 @@
 \alias{ObservedRepresentation}
 \title{Compute the observed degree of representation for any group in a political body}
 \usage{
-ObservedRepresentation(BodyMemberCharacteristics, PopShares, BodyShares, a = -0.5, b = 1)
+ObservedRepresentation(BodyMemberCharacteristics, PopShares, BodyShares,
+                       a = -0.5, b = 1, metric = c("L1", "L2"))
 }
 \arguments{
 \item{BodyMemberCharacteristics}{A vector specifying the characteristics for members of a political body.}
@@ -14,9 +15,17 @@ ObservedRepresentation(BodyMemberCharacteristics, PopShares, BodyShares, a = -0.
 \item{BodyShares}{(optional) A numeric vector with same structure as \code{PopShares} specifying group population shares of a given body. If supplied with names, they are matched to \code{PopShares}; otherwise, the order is assumed to correspond to that of \code{PopShares}.}
 
 \item{a, b}{Parameters controlling the affine transformation for how the representation measure is summarized.
-That is, \code{a} and \code{b} control how the L1 deviation of the population shares from the body shares
-is re-weighted. This expected L1 deviation is multiplied by \code{a}; \code{b} is as an additive re-scaling term: \code{a*L1+b}.
-By default, \code{a=-0.5} and \code{b=1} so that the Rose Index of Proportionality is returned.}
+That is, \code{a} and \code{b} control how the deviation of the population shares from the body shares
+is re-weighted. This deviation is multiplied by \code{a}; \code{b} is as an additive re-scaling term: \code{a*deviation+b}.
+By default, \code{a=-0.5} and \code{b=1} so that the Rose Index of Proportionality is returned when \code{metric = "L1"}.}
+
+\item{metric}{A character string selecting the deviation metric underlying the representation index.
+\code{"L1"} (the default) uses the sum of absolute deviations between population and body shares,
+yielding the Rose Index of Proportionality under the default \code{a} and \code{b}.
+\code{"L2"} uses the sum of squared deviations, yielding the squared-deviation representation
+index analyzed in Gerring, Hicken, Jerzak, Moser, and Oncel (book manuscript). Because squared deviations of
+proportions are no larger than absolute deviations, the \code{"L2"} index is always greater than
+or equal to the \code{"L1"} index under the default \code{a} and \code{b}.}
 }
 \value{
 The observed degree of representation (a scalar). By default, this quantity is the Rose Index of Proportionality.

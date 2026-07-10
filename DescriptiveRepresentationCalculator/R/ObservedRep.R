@@ -4,7 +4,8 @@
 #'
 #' @usage
 #'
-#' ObservedRepresentation(BodyMemberCharacteristics, PopShares, BodyShares, a = -0.5, b = 1)
+#' ObservedRepresentation(BodyMemberCharacteristics, PopShares, BodyShares,
+#'                        a = -0.5, b = 1, metric = c("L1", "L2"))
 #'
 #' @param BodyMemberCharacteristics A vector specifying the characteristics for members of a political body.
 #'
@@ -13,9 +14,17 @@
 #' @param BodyShares (optional) A numeric vector with same structure as `PopShares` specifying group population shares of a given body. If supplied with names, they are matched to `PopShares`; otherwise, the order is assumed to correspond to that of `PopShares`.
 #'
 #' @param a,b Parameters controlling the affine transformation for how the representation measure is summarized.
-#' That is, `a` and `b` control how the L1 deviation of the population shares from the body shares
-#' is re-weighted. This expected L1 deviation is multiplied by `a`; `b` is as an additive re-scaling term: `a*L1+b`.
-#' By default, `a=-0.5` and `b=1` so that the Rose Index of Proportionality is returned.
+#' That is, `a` and `b` control how the deviation of the population shares from the body shares
+#' is re-weighted. This deviation is multiplied by `a`; `b` is as an additive re-scaling term: `a*deviation+b`.
+#' By default, `a=-0.5` and `b=1` so that the Rose Index of Proportionality is returned when `metric = "L1"`.
+#'
+#' @param metric A character string selecting the deviation metric underlying the representation index.
+#' `"L1"` (the default) uses the sum of absolute deviations between population and body shares,
+#' yielding the Rose Index of Proportionality under the default `a` and `b`.
+#' `"L2"` uses the sum of squared deviations, yielding the squared-deviation representation
+#' index analyzed in Gerring, Hicken, Jerzak, Moser, and Oncel (book manuscript). Because squared deviations of
+#' proportions are no larger than absolute deviations, the `"L2"` index is always greater than
+#' or equal to the `"L1"` index under the default `a` and `b`.
 #'
 #' @return The observed degree of representation (a scalar). By default, this quantity is the Rose Index of Proportionality.
 #' @export
@@ -40,7 +49,10 @@
 ObservedRepresentation <- function( BodyMemberCharacteristics = NULL,
                                     PopShares,
                                     BodyShares = NULL,
-                                    a = -0.5, b = 1){
+                                    a = -0.5, b = 1,
+                                    metric = c("L1", "L2")){
+  metric <- match.arg(metric)
+
   # validate PopShares (non-negative, sum to 1)
   if(!any(is.na(PopShares))){
     validatePopShares(PopShares)
@@ -53,25 +65,13 @@ ObservedRepresentation <- function( BodyMemberCharacteristics = NULL,
     return(NA)
   }
 
-  # if BodyShares not supplied, compute from body member characteristics
-  if(is.null(BodyShares)){
-    # warn about unmatched body members
-    checkUnmatchedBodyMembers(BodyMemberCharacteristics, PopShares)
+  # derive body shares aligned with PopShares
+  BodyShares <- deriveBodyShares(BodyMemberCharacteristics, PopShares, BodyShares)
 
-    BodyShares <- prop.table(table( BodyMemberCharacteristics) )
-    BodyShares <- BodyShares[names(PopShares)]
-    BodyShares[is.na(BodyShares)] <- 0
-  } else {
-    # when provided, match by name if names are present
-    if(!is.null(names(BodyShares)) && any(names(BodyShares) != "")){
-      BodyShares <- BodyShares[names(PopShares)]
-    }
-  }
-  
   # if any body or pop shares are NA, return NA
   if(any(is.na(BodyShares <- f2n(BodyShares)))){ return( ObservedIndex <- NA )  }
   if(any(is.na(PopShares <- f2n(PopShares)))){ return( ObservedIndex <- NA )  }
 
-  # compute observed representation index 
-  return( ObservedIndex <- a*sum(abs(PopShares-BodyShares),na.rm=T) + b )
+  # compute observed representation index
+  return( ObservedIndex <- a*sum(shareDeviations(PopShares, BodyShares, metric),na.rm=T) + b )
 }

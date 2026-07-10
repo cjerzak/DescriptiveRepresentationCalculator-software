@@ -4,7 +4,8 @@
 \alias{SDRepresentation}
 \title{Compute the amount of representation left unexplained by a random sampling model.}
 \usage{
-SDRepresentation(PopShares, BodyN, a = -0.5, b = 1, nMonte = 10000)
+SDRepresentation(PopShares, BodyN, a = -0.5, b = 1, nMonte = 10000,
+                 metric = c("L1", "L2"))
 }
 \arguments{
 \item{PopShares}{A numeric vector containing the group-level population proportions.}
@@ -18,6 +19,12 @@ a random sampling model. This expected L1 deviation is multiplied by \code{a}; \
 By default, \code{a=-0.5} and \code{b=1} so that the expected Rose Index of Proportionality is used in the calculation.}
 
 \item{nMonte}{A positive integer denoting number of Monte Carlo iterations used to approximate the variance of representation under a random sampling model.}
+
+\item{metric}{A character string selecting the deviation metric underlying the representation index.
+\code{"L1"} (the default) uses the sum of absolute deviations between population and body shares,
+yielding the Rose Index of Proportionality under the default \code{a} and \code{b}.
+\code{"L2"} uses the sum of squared deviations, yielding the squared-deviation representation
+index analyzed in Gerring, Hicken, Jerzak, Moser, and Oncel (book manuscript).}
 }
 \value{
 A scalar summary of the amount of representation not explained by a random sampling model.

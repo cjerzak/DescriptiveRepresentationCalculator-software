@@ -8,7 +8,8 @@ RelativeRepresentation(BodyMemberCharacteristics,
                        PopShares,
                        a = -0.5, b = 1,
                        standardize = FALSE,
-                       nMonte = 10000)
+                       nMonte = 10000,
+                       metric = c("L1", "L2"))
 }
 \arguments{
 \item{BodyMemberCharacteristics}{A vector specifying characteristics for each
@@ -27,6 +28,10 @@ under random sampling.}
 
 \item{nMonte}{A positive integer denoting number of Monte Carlo iterations used
 for estimating the standard deviation when \code{standardize = TRUE}.}
+
+\item{metric}{A character string selecting the deviation metric underlying the
+representation index (\code{"L1"}, the default, or \code{"L2"}), passed to
+\code{ObservedRepresentation}, \code{ExpectedRepresentation}, and \code{SDRepresentation}.}
 }
 \value{
 A scalar giving the difference between observed and expected
